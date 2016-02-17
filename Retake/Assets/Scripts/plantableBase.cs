@@ -1,3 +1,7 @@
+/*
+ * 
+ * For the time being all classes here have been split into separate files
+ * to ease creating multiple objects.
 using UnityEngine;
 using System.Collections;
 
@@ -10,6 +14,7 @@ public class plant : MonoBehaviour
 public class seed : MonoBehaviour
 {
 	public string species;
+	public int max_growth_size;
 }
 
 public class plantableZone : MonoBehaviour
@@ -18,11 +23,10 @@ public class plantableZone : MonoBehaviour
 	public int waterPresent;
 	public int pollutionPresent;
 	public plantableSpace[] spaces;
-	
 
 }
 
-public class plantableSpace : plant
+public class plantableSpace : MonoBehaviour
 {
 	public bool occupied;
 	public int waterPresent;
@@ -40,30 +44,34 @@ public class plantableSpace : plant
 		print(parentZone);
 	}
 	
-	void onMouseDown()
+	string onLeftMouseDown(seed playerSeed, plant playerPlant)
 	{
 		if(occupied)
 		{
-			print("Space is occupied!");
+			return "Space is occupied!";
 			// Call remove function?
 		}
-		/*
+		//If player is holding seed, set it.
 		else if(playerSeed)
 		{
 			currentSeed = playerSeed;
+			//Spawn GameObject of Seed
+			return "Planted " + playerSeed.species + "!";
 		}
+		//Else if holding a plant, set that.
 		else if(playerPlant)
 		{
 			currentPlant = playerPlant;
+			return "Planted " + playerPlant.species + "!";
 		}
-		// If not occupied, give option to place seed or plant 
-			// If plant select, spawn plants and occupied = true 
-			// If seed select, spawn seeds and occupied = true 
-		// If occupied, give option to remove plant or seed 
-		*/
+		else
+		{
+		//Player has no plant or seed selected in inventory, nothing happens.
+		return null;
+		}
+
 	}
-	
-	
+
 	
 	void onWaterReceived()
 	{
@@ -72,3 +80,4 @@ public class plantableSpace : plant
 	}
 
 }
+*/
