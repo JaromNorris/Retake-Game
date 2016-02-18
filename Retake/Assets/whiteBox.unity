@@ -12480,6 +12480,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11475320, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
+      propertyPath: m_FootstepSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 433998, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
       propertyPath: m_LocalPosition.x
       value: 12.5
@@ -12516,6 +12520,30 @@ Prefab:
       propertyPath: CanvasText
       value: 
       objectReference: {fileID: 1737077515}
+    - target: {fileID: 11475320, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
+      propertyPath: m_GravityMultiplier
+      value: 3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475320, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
+      propertyPath: m_StickToGroundForce
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475320, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
+      propertyPath: m_MouseLook.XSensitivity
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475320, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
+      propertyPath: m_MouseLook.YSensitivity
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11475320, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
+      propertyPath: m_FootstepSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a9383dda6cabc047b7a297602e93eb4, type: 3}
+    - target: {fileID: 11475320, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
+      propertyPath: m_FootstepSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: e9714160ce34f2b4ab63ff8c27bd68e1, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
   m_IsPrefabParent: 0
