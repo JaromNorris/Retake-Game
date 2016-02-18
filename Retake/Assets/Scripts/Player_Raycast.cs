@@ -25,12 +25,11 @@ public class Player_Raycast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         //Debug view of the ray
         Debug.DrawRay(this.transform.position, this.transform.forward * viewDistance, Color.blue);
 
         //Looking at object and left-click
-        if (Input.GetMouseButtonDown(0) && Physics.Raycast(this.transform.position, this.transform.forward, out hitObj, viewDistance))
+        if (Input.GetMouseButtonDown(0) && playerInventory.currentItem != null && Physics.Raycast(this.transform.position, this.transform.forward, out hitObj, viewDistance))
         {
             Debug.Log("Selected " + hitObj.collider.name);
 
@@ -38,9 +37,26 @@ public class Player_Raycast : MonoBehaviour
             {
                 if (!hitObj.collider.gameObject.GetComponent<Plantable_Space>().occupied)
                 {
-                    GameObject planted = Instantiate(TestPlant, hitObj.transform.position, hitObj.transform.rotation) as GameObject;
-                    CanvasText.GetComponent<Text>().text = hitObj.collider.gameObject.GetComponent<Plantable_Space>().onLeftMouseDown(
-                        null, planted.GetComponent<Plant>()) + " At " + planted.transform.position;
+                    GameObject planted;
+                    if (playerInventory.currentItem.type.Equals("Plant"))
+                    {
+                        planted = Instantiate(TestPlant, hitObj.transform.position, hitObj.transform.rotation) as GameObject;
+                        hitObj.collider.GetComponent<Plantable_Space>().occupied = true;
+                        hitObj.collider.GetComponent<Plantable_Space>().currentPlant = planted.GetComponent<Plant>();
+                        playerInventory.Remove(playerInventory.currentIndex);
+                    }
+                    else
+                    {
+                        planted = Instantiate(TestSeed, hitObj.transform.position, hitObj.transform.rotation) as GameObject;
+                        hitObj.collider.GetComponent<Plantable_Space>().occupied = true;
+                        hitObj.collider.GetComponent<Plantable_Space>().currentSeed = planted.GetComponent<Seed>();
+                        playerInventory.Remove(playerInventory.currentIndex);
+                    }
+                    if(playerInventory.currentItem != null)
+                        CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
+                            + playerInventory.currentItem.type + " (" + playerInventory.currentItem.count + ")";
+                    else
+                        CanvasText.GetComponent<Text>().text = "No item in slot " + (playerInventory.currentIndex + 1);
                 }
             }
         }
@@ -55,16 +71,23 @@ public class Player_Raycast : MonoBehaviour
                 {
                     hitObj.collider.gameObject.GetComponent<Plantable_Space>().occupied = false;
 
-                    if (hitObj.collider.gameObject.GetComponent<Plantable_Space>().currentPlant.gameObject)
+                    if (hitObj.collider.gameObject.GetComponent<Plantable_Space>().currentPlant != null)
                     {
-                        CanvasText.GetComponent<Text>().text = "Destroyed " +
-                            hitObj.collider.gameObject.GetComponent<Plantable_Space>().currentPlant.species + " At " + 
-                            hitObj.collider.gameObject.GetComponent<Plantable_Space>().currentPlant.transform.position;
-                        Destroy(hitObj.collider.gameObject.GetComponent<Plantable_Space>().currentPlant.gameObject);
+                        Plant currentPlant = hitObj.collider.gameObject.GetComponent<Plantable_Space>().currentPlant;
+                        playerInventory.Add(currentPlant);
+                        if(playerInventory.currentItem != null && currentPlant.Type.Equals(playerInventory.currentItem.type))
+                            CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
+                                + playerInventory.currentItem.type + " (" + playerInventory.currentItem.count + ")";
+                        Destroy(currentPlant.gameObject);
                     }
-                    else if (hitObj.collider.gameObject.GetComponent<Plantable_Space>().currentSeed.gameObject)
+                    else if (hitObj.collider.gameObject.GetComponent<Plantable_Space>().currentSeed != null)
                     {
-                        Destroy(hitObj.collider.gameObject.GetComponent<Plantable_Space>().currentSeed.gameObject);
+                        Seed currentSeed = hitObj.collider.gameObject.GetComponent<Plantable_Space>().currentSeed;
+                        playerInventory.Add(currentSeed);
+                        if (playerInventory.currentItem != null && currentSeed.Type.Equals(playerInventory.currentItem.type))
+                            CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
+                                + playerInventory.currentItem.type + " (" + playerInventory.currentItem.count + ")";
+                        Destroy(currentSeed.gameObject);
                     }
                     hitObj.collider.gameObject.GetComponent<Plantable_Space>().currentSeed = null;
                     hitObj.collider.gameObject.GetComponent<Plantable_Space>().currentPlant = null;
@@ -72,14 +95,25 @@ public class Player_Raycast : MonoBehaviour
             }
             else if (hitObj.collider.tag == "Plant")
             {
-                hitObj.collider.gameObject.GetComponent<Plant>().currentSpace.occupied = false;
-                hitObj.collider.gameObject.GetComponent<Plant>().currentSpace.currentPlant = null;
+                Plant currentPlant = hitObj.collider.gameObject.GetComponent<Plant>();
+                Debug.LogError(currentPlant);
+                if (playerInventory.currentItem != null && currentPlant.Type.Equals(playerInventory.currentItem.type))
+                    CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
+                        + playerInventory.currentItem.type + " (" + playerInventory.currentItem.count + ")";
+                playerInventory.Add(currentPlant);
+                currentPlant.currentSpace.occupied = false;
+                currentPlant.currentSpace.currentPlant = null;
                 Destroy(hitObj.collider.gameObject);
             }
             else if (hitObj.collider.tag == "Seed")
             {
-                hitObj.collider.gameObject.GetComponent<Seed>().currentSpace.occupied = false;
-                hitObj.collider.gameObject.GetComponent<Seed>().currentSpace.currentPlant = null;
+                Seed currentSeed = hitObj.collider.gameObject.GetComponent<Seed>();
+                if (playerInventory.currentItem != null && currentSeed.Type.Equals(playerInventory.currentItem.type))
+                    CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
+                        + playerInventory.currentItem.type + " (" + playerInventory.currentItem.count + ")";
+                playerInventory.Add(currentSeed);
+                currentSeed.currentSpace.occupied = false;
+                currentSeed.currentSpace.currentSeed = null;
                 Destroy(hitObj.collider.gameObject);
             }
         }
@@ -89,7 +123,8 @@ public class Player_Raycast : MonoBehaviour
         {
             playerInventory.currentIndex = 0;
             if (playerInventory.currentItem != null)
-                CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " " + playerInventory.currentItem.Type;
+                CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
+                    + playerInventory.currentItem.type + " (" + playerInventory.currentItem.count + ")";
             else
                 CanvasText.GetComponent<Text>().text = "No item in slot 1";
         }
@@ -97,7 +132,8 @@ public class Player_Raycast : MonoBehaviour
         {
             playerInventory.currentIndex = 1;
             if (playerInventory.currentItem != null)
-                CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " " + playerInventory.currentItem.Type;
+                CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
+                    + playerInventory.currentItem.type + " (" + playerInventory.currentItem.count + ")";
             else
                 CanvasText.GetComponent<Text>().text = "No item in slot 2";
         }
@@ -105,7 +141,8 @@ public class Player_Raycast : MonoBehaviour
         {
             playerInventory.currentIndex = 2;
             if (playerInventory.currentItem != null)
-                CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " " + playerInventory.currentItem.Type;
+                CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
+                    + playerInventory.currentItem.type + " (" + playerInventory.currentItem.count + ")";
             else
                 CanvasText.GetComponent<Text>().text = "No item in slot 3";
         }
@@ -113,15 +150,18 @@ public class Player_Raycast : MonoBehaviour
         {
             playerInventory.currentIndex = 3;
             if (playerInventory.currentItem != null)
-                CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " " + playerInventory.currentItem.Type;
+                CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
+                    + playerInventory.currentItem.type + " (" + playerInventory.currentItem.count + ")";
             else
                 CanvasText.GetComponent<Text>().text = "No item in slot 4";
         }
         else if (Input.GetKeyDown(KeyCode.Alpha5) && playerInventory.hotbarSize >= 5)
         {
             playerInventory.currentIndex = 4;
+            
             if (playerInventory.currentItem != null)
-                CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " " + playerInventory.currentItem.Type;
+                CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
+                    + playerInventory.currentItem.type + " (" + playerInventory.currentItem.count + ")";
             else
                 CanvasText.GetComponent<Text>().text = "No item in slot 5";
         }
@@ -129,7 +169,8 @@ public class Player_Raycast : MonoBehaviour
         {
             playerInventory.currentIndex = 5;
             if (playerInventory.currentItem != null)
-                CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " " + playerInventory.currentItem.Type;
+                CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
+                    + playerInventory.currentItem.type + " (" + playerInventory.currentItem.count + ")";
             else
                 CanvasText.GetComponent<Text>().text = "No item in slot 6";
         }
@@ -137,7 +178,8 @@ public class Player_Raycast : MonoBehaviour
         {
             playerInventory.currentIndex = 6;
             if (playerInventory.currentItem != null)
-                CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " " + playerInventory.currentItem.Type;
+                CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
+                    + playerInventory.currentItem.type + " (" + playerInventory.currentItem.count + ")";
             else
                 CanvasText.GetComponent<Text>().text = "No item in slot 7";
         }
@@ -145,7 +187,8 @@ public class Player_Raycast : MonoBehaviour
         {
             playerInventory.currentIndex = 7;
             if (playerInventory.currentItem != null)
-                CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " " + playerInventory.currentItem.Type;
+                CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
+                    + playerInventory.currentItem.type + " (" + playerInventory.currentItem.count + ")";
             else
                 CanvasText.GetComponent<Text>().text = "No item in slot 8";
         }
@@ -153,7 +196,8 @@ public class Player_Raycast : MonoBehaviour
         {
             playerInventory.currentIndex = 8;
             if (playerInventory.currentItem != null)
-                CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " " + playerInventory.currentItem.Type;
+                CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
+                    + playerInventory.currentItem.type + " (" + playerInventory.currentItem.count + ")";
             else
                 CanvasText.GetComponent<Text>().text = "No item in slot 9";
         }
@@ -161,9 +205,27 @@ public class Player_Raycast : MonoBehaviour
         {
             playerInventory.currentIndex = 9;
             if (playerInventory.currentItem != null)
-                CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " " + playerInventory.currentItem.Type;
+                CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
+                    + playerInventory.currentItem.type + " (" + playerInventory.currentItem.count + ")";
             else
                 CanvasText.GetComponent<Text>().text = "No item in slot 10";
+        }
+
+        // refill the player's inventory
+        else if(Input.GetKeyDown(KeyCode.Return))
+        {
+            GameObject newPlant = Instantiate(TestPlant) as GameObject;
+            playerInventory.Add(newPlant.GetComponent<Plant>());
+            playerInventory.Add(newPlant.GetComponent<Plant>());
+            Destroy(newPlant);
+
+            GameObject newSeed = Instantiate(TestSeed) as GameObject;
+            playerInventory.Add(newSeed.GetComponent<Seed>());
+            playerInventory.Add(newSeed.GetComponent<Seed>());
+            Destroy(newSeed);
+
+            CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
+                + playerInventory.currentItem.type + " (" + playerInventory.currentItem.count + ")";
         }
 
     }

@@ -9,7 +9,6 @@ public abstract class PlantableObject : MonoBehaviour
     public int lightRequired;
     public int waterRequired;
     public Plantable_Space currentSpace;
-    public int count = 0; // used for inventory
 
     public abstract string Type { get; }
 }

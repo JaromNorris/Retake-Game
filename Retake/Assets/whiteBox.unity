@@ -207,6 +207,10 @@ Prefab:
       propertyPath: m_Name
       value: Plantable_Space (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 148320, guid: e544d55e239825243a574b0f7a72ee31, type: 2}
+      propertyPath: m_TagString
+      value: Plantable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e544d55e239825243a574b0f7a72ee31, type: 2}
   m_IsPrefabParent: 0
@@ -1812,6 +1816,10 @@ Prefab:
       propertyPath: m_Name
       value: Plantable_Space (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 11434182, guid: e544d55e239825243a574b0f7a72ee31, type: 2}
+      propertyPath: currentSeed
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e544d55e239825243a574b0f7a72ee31, type: 2}
   m_IsPrefabParent: 0
@@ -2615,6 +2623,10 @@ Prefab:
       propertyPath: m_Name
       value: Plantable_Space (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 11434182, guid: e544d55e239825243a574b0f7a72ee31, type: 2}
+      propertyPath: currentSeed
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e544d55e239825243a574b0f7a72ee31, type: 2}
   m_IsPrefabParent: 0
@@ -2787,6 +2799,10 @@ Prefab:
     - target: {fileID: 148320, guid: e544d55e239825243a574b0f7a72ee31, type: 2}
       propertyPath: m_Name
       value: Plantable_Space (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11434182, guid: e544d55e239825243a574b0f7a72ee31, type: 2}
+      propertyPath: currentPlant
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e544d55e239825243a574b0f7a72ee31, type: 2}
@@ -3448,6 +3464,10 @@ Prefab:
     - target: {fileID: 148320, guid: e544d55e239825243a574b0f7a72ee31, type: 2}
       propertyPath: m_Name
       value: Plantable_Space (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11434182, guid: e544d55e239825243a574b0f7a72ee31, type: 2}
+      propertyPath: currentPlant
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e544d55e239825243a574b0f7a72ee31, type: 2}
@@ -6980,6 +7000,10 @@ Prefab:
       propertyPath: m_Name
       value: Plantable_Space (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 11434182, guid: e544d55e239825243a574b0f7a72ee31, type: 2}
+      propertyPath: currentPlant
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e544d55e239825243a574b0f7a72ee31, type: 2}
   m_IsPrefabParent: 0
@@ -7425,6 +7449,10 @@ Prefab:
     - target: {fileID: 148320, guid: e544d55e239825243a574b0f7a72ee31, type: 2}
       propertyPath: m_Name
       value: Plantable_Space (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11434182, guid: e544d55e239825243a574b0f7a72ee31, type: 2}
+      propertyPath: currentPlant
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e544d55e239825243a574b0f7a72ee31, type: 2}
@@ -10101,6 +10129,10 @@ Prefab:
       propertyPath: m_Name
       value: Plantable_Space (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 11434182, guid: e544d55e239825243a574b0f7a72ee31, type: 2}
+      propertyPath: currentSeed
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e544d55e239825243a574b0f7a72ee31, type: 2}
   m_IsPrefabParent: 0
@@ -11610,7 +11642,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: asdfsdfs
+  m_Text: Press Enter to fill your inventory
 --- !u!222 &1737077517
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13158,6 +13190,10 @@ Prefab:
     - target: {fileID: 148320, guid: e544d55e239825243a574b0f7a72ee31, type: 2}
       propertyPath: m_Name
       value: Plantable_Space (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11434182, guid: e544d55e239825243a574b0f7a72ee31, type: 2}
+      propertyPath: currentSeed
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e544d55e239825243a574b0f7a72ee31, type: 2}
