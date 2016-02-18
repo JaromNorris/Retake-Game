@@ -119,17 +119,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   species: Mushroom
-  max_growth_size: 1
-  water_required: 0
-  light_required: 0
-  current_space: {fileID: 0}
+  currentSize: 1
+  maxSize: 1
+  lightRequired: 0
+  waterRequired: 0
+  currentSpace: {fileID: 0}
+  count: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: species
+      value: Mushroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: currentSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxSize
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 135582}

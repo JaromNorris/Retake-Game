@@ -4,115 +4,76 @@ using System;
 
 public class Inventory : MonoBehaviour
 {
-    public PlantableObject[] inventory;
     public int inventorySize;
+    public PlantableObject[] inventory;
+    
     public int hotbarSize;
-    public Hotbar hotbar;
+    public PlantableObject[] hotbar;
+    public int currentIndex;
+    public PlantableObject currentItem;
+
     int nextInventory;
 
-    public class Hotbar
-    {
-        public int hotbarSize;
-        private int currentIndex;
-        public PlantableObject[] items;
-        Inventory inventory;
-
-        public Hotbar(int _size)
-        {
-            hotbarSize = _size;
-            items = new PlantableObject[_size];
-            currentIndex = 0;
-        }
-
-        public Hotbar(int _size, PlantableObject[] _items)
-        {
-            hotbarSize = _size;
-            items = _items;
-            currentIndex = 0;
-        }
-
-        public int CurrentIndex
-        {
-            get { return currentIndex; }
-            set { currentIndex = value; }
-        }
-
-        public PlantableObject CurrentItem
-        {
-            get { return items[currentIndex]; }
-        }
-
-        void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-                CurrentIndex = 0;
-            else if (Input.GetKeyDown(KeyCode.Alpha2) && hotbarSize >= 2)
-                CurrentIndex = 1;
-            else if (Input.GetKeyDown(KeyCode.Alpha3) && hotbarSize >= 3)
-                CurrentIndex = 2;
-            else if (Input.GetKeyDown(KeyCode.Alpha4) && hotbarSize >= 4)
-                CurrentIndex = 3;
-            else if (Input.GetKeyDown(KeyCode.Alpha5) && hotbarSize >= 5)
-                CurrentIndex = 4;
-            else if (Input.GetKeyDown(KeyCode.Alpha6) && hotbarSize >= 6)
-                CurrentIndex = 5;
-            else if (Input.GetKeyDown(KeyCode.Alpha7) && hotbarSize >= 7)
-                CurrentIndex = 6;
-            else if (Input.GetKeyDown(KeyCode.Alpha8) && hotbarSize >= 8)
-                CurrentIndex = 7;
-            else if (Input.GetKeyDown(KeyCode.Alpha9) && hotbarSize >= 9)
-                CurrentIndex = 8;
-            else if (Input.GetKeyDown(KeyCode.Alpha0) && hotbarSize >= 10)
-                CurrentIndex = 9;
-        }
-    }
-
     // Use this for initialization
-    public Inventory()
+    void Start()
     {
         nextInventory = 0;
         inventory = new PlantableObject[inventorySize];
-        hotbar = new Hotbar(hotbarSize, GetFirstN(hotbarSize));
+        hotbar = new PlantableObject[hotbarSize];
+        UpdateHotbar(hotbar, inventory);
     }
 
-    public Inventory(PlantableObject[] _inventory) : this()
+    private void UpdateHotbar(PlantableObject[] hotbar, PlantableObject[] inventory)
     {
         int counter = 0;
-        int lastIndex = _inventory.GetUpperBound(0);
-        foreach(PlantableObject o in _inventory)
-        {
-            if (o == null)
-                continue;
-            if (counter >= inventory.Length)
-                break;
-            inventory[counter] = o;
-            counter++;
-        }
-        nextInventory = counter;
+        for (int i = 0; i < inventorySize && counter < hotbarSize; i++)
+            if (inventory[i] != null)
+            {
+                hotbar[counter] = inventory[i];
+                counter++;
+            }
     }
 
-    public PlantableObject[] GetFirstN(int n)
-    {
-        PlantableObject[] firstN = new PlantableObject[n];
-        Array.Copy(inventory, 0, firstN, 0, n);
-        return firstN;
-    }
-
+    /*
+     * Adds the given object to the inventory.
+     * If there is already an instance of the item in the inventory, simply
+     *   increments the count of the entry.
+     * If there is no existing instance, will put the object in the first open
+     *   slot in the inventory.
+     * This will update the hotbar as needed.
+     * Will do nothing if there are no more open spots for the object.
+     */
     public void Add(PlantableObject o)
     {
-        int index;
-        if ((index = Array.IndexOf(inventory, o)) != -1)
-        {
-            inventory[index].count += 1;
-            return;
-        }
+        // see if a PlantableObject of the same type and species is in the inventory
+        foreach(PlantableObject o2 in inventory)
+            if(o.GetType() == o2.GetType() && o.species.Equals(o2.species))
+            {
+                // if so, increment the count on the existing object
+                o2.count++;
+                return;
+            }
+        // if the inventory is full, don't add anything
         if (nextInventory == inventory.Length)
             return;
+        // if nothing else, add it to the inventory at the first available spot
         inventory[nextInventory] = o;
-        while (inventory[nextInventory] != null && nextInventory < inventory.Length)
+        inventory[nextInventory].count = 1;
+        // increment the indicator for the next open spot until it finds one
+        //   or reaches the end of the inventory
+        do
             nextInventory++;
+        while (inventory[nextInventory] != null && nextInventory < inventory.Length);
+        UpdateHotbar(hotbar, inventory);
     }
 
+    /*
+     * Removes an item from the inventory.
+     * If there is more than one of the object, simply decrements the
+     *    count of the remaining object.
+     * If the count drops to zero, the item is removed from the inventory.
+     * This will update the hotbar as needed.
+     */
     public PlantableObject Remove(int index)
     {
         PlantableObject o;
@@ -122,11 +83,7 @@ public class Inventory : MonoBehaviour
         inventory[index].count--;
         if(inventory[index].count == 0)
             inventory[index] = null;
+        UpdateHotbar(hotbar, inventory);
         return o;
-    }
-
-    void Update()
-    {
-
     }
 }

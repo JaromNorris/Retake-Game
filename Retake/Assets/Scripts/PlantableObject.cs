@@ -3,12 +3,13 @@ using System.Collections;
 
 public abstract class PlantableObject : MonoBehaviour
 {
-    public abstract string Species { get; set; }
-    public abstract int CurrentSize { get; set; }
-    public abstract int MaxSize { get; set; }
-    public abstract int LightRequired { get; set; }
-    public abstract int WaterRequired { get; set; }
-    public abstract Plantable_Space CurrentSpace { get; set; }
+    public string species;
+    public int currentSize;
+    public int maxSize;
+    public int lightRequired;
+    public int waterRequired;
+    public Plantable_Space currentSpace;
+    public int count = 0; // used for inventory
 
-    public int count = 0;
+    public abstract string Type { get; }
 }

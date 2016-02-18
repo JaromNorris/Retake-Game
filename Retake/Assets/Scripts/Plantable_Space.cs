@@ -32,17 +32,17 @@ public class Plantable_Space : MonoBehaviour
 		{
 			currentSeed = playerSeed;
 			occupied = true;
-			currentSeed.GetComponent<Seed>().CurrentSpace = this.gameObject.GetComponent<Plantable_Space>();
+			currentSeed.GetComponent<Seed>().currentSpace = this.gameObject.GetComponent<Plantable_Space>();
 			//Spawn GameObject of Seed
-			return "Planted " + playerSeed.Species;
+			return "Planted " + playerSeed.species;
 		}
 		//Else if holding a plant, set that.
 		else if(playerPlant)
 		{
 			currentPlant = playerPlant;
 			occupied = true;
-			currentPlant.GetComponent<Plant>().CurrentSpace = this.gameObject.GetComponent<Plantable_Space>();
-			return "Planted " + playerPlant.Species;
+			currentPlant.GetComponent<Plant>().currentSpace = this.gameObject.GetComponent<Plantable_Space>();
+			return "Planted " + playerPlant.species;
 		}
 		else
 		{

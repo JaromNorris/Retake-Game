@@ -12484,14 +12484,6 @@ Prefab:
       propertyPath: CanvasText
       value: 
       objectReference: {fileID: 1737077515}
-    - target: {fileID: 11416638, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
-      propertyPath: inventorySize
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 11416638, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
-      propertyPath: hotbarSize
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
   m_IsPrefabParent: 0
