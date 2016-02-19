@@ -24,6 +24,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             m_CharacterTargetRot = character.localRotation;
             m_CameraTargetRot = camera.localRotation;
+
+            CursorLockMode mouseLock = CursorLockMode.Locked;
+            Cursor.lockState = mouseLock;
+            Cursor.visible = false;
         }
 
 
