@@ -43,14 +43,16 @@ public class Player_Raycast : MonoBehaviour
                         planted = Instantiate(TestPlant, hitObj.transform.position, hitObj.transform.rotation) as GameObject;
                         hitObj.collider.GetComponent<Plantable_Space>().occupied = true;
                         hitObj.collider.GetComponent<Plantable_Space>().currentPlant = planted.GetComponent<Plant>();
+						planted.GetComponent<PlantableObject>().currentSpace = hitObj.collider.gameObject.GetComponent<Plantable_Space>();
                         playerInventory.Remove(playerInventory.currentIndex);
                     }
                     else
                     {
                         planted = Instantiate(TestSeed, hitObj.transform.position, hitObj.transform.rotation) as GameObject;
                         hitObj.collider.GetComponent<Plantable_Space>().occupied = true;
-                        hitObj.collider.GetComponent<Plantable_Space>().currentSeed = planted.GetComponent<Seed>();
-                        playerInventory.Remove(playerInventory.currentIndex);
+						hitObj.collider.GetComponent<Plantable_Space>().currentSeed = planted.GetComponent<Seed>();
+						planted.GetComponent<PlantableObject>().currentSpace = hitObj.collider.gameObject.GetComponent<Plantable_Space>();
+						playerInventory.Remove(playerInventory.currentIndex);
                     }
                     if(playerInventory.currentItem != null)
                         CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
