@@ -23,12 +23,11 @@ public abstract class PlantableObject : MonoBehaviour
 
 	void Start()
 	{
-		//Debug.Log ("Started Life");
 		secondsInDay = Sun.GetComponent<TimeRotation>().secondsInDay;
 		daysSincePlanted = 0;
 		growthParticles = this.GetComponent<ParticleSystem>();
 		timePlanted = Sun.GetComponent<TimeRotation>().currentTime;
-		Debug.Log ("Got Stats");
+
 		//Wait until the equivalent of one day has passed
 		//Repeat every '24 hours'
 		InvokeRepeating("CountDay", secondsInDay, secondsInDay);
@@ -70,9 +69,7 @@ public abstract class PlantableObject : MonoBehaviour
 		if(nextGrowth)
 		{
 		//Start the growth particle process
-			Debug.Log("Growing");
 			growthParticles.Play();
-			Debug.Log("Played");
 		//Wait until the particles are done
 		//*******IMPORTANT******** THE PARTICLE SYSTEM SHOULD NOT LOOP
 		StartCoroutine(finishGrowth(growthParticles.duration));
