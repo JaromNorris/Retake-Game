@@ -1,20 +1,15 @@
 fileFormatVersion: 2
-guid: c0d9c1b773913fa45bd593d630a86394
-timeCreated: 1457587892
+guid: d80d257619a1f784ca62b9c54eb53e66
+timeCreated: 1457642504
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: polySurface6
-    100002: //RootNode
-    100004: rockvarient1:pCube3
-    400000: polySurface6
-    400002: //RootNode
-    400004: rockvarient1:pCube3
-    2300000: polySurface6
-    3300000: polySurface6
-    4300000: polySurface6
-    6400000: polySurface6
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pSphere1
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -41,7 +36,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
