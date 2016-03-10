@@ -6,7 +6,7 @@ public class Inventory : MonoBehaviour
 {
     public int inventorySize;
     public InventoryEntry[] inventory;
-    
+
     public int hotbarSize;
     public InventoryEntry[] hotbar;
     private int _currentIndex;
@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour
     {
         get { return _currentIndex; }
         set
-        { 
+        {
             _currentIndex = value;
             currentItem = inventory[_currentIndex];
         }
@@ -54,11 +54,11 @@ public class Inventory : MonoBehaviour
      * This will update the hotbar as needed.
      * Will do nothing if there are no more open spots for the object.
      */
-    public void Add(PlantableObject o)
+    public void Add(InventoryEntry ie)
     {
         // see if an InventoryEntry of the same type and species is in the inventory
-        foreach(InventoryEntry entry in inventory)
-            if(entry != null && o.Type.Equals(entry.type) && o.species.Equals(entry.species))
+        foreach (InventoryEntry entry in inventory)
+            if (entry != null && ie.type.Equals(entry.type) && ie.species.Equals(entry.species))
             {
                 // if so, increment the count on the existing object
                 entry.count++;
@@ -68,10 +68,7 @@ public class Inventory : MonoBehaviour
         if (nextInventory == inventory.Length)
             return;
         // if nothing else, add it to the inventory at the first available spot
-        InventoryEntry newEntry = ScriptableObject.CreateInstance("InventoryEntry") as InventoryEntry;
-        newEntry.SetInventoryEntry(o);
-        newEntry.count = 1;
-        inventory[nextInventory] = newEntry;
+        inventory[nextInventory] = ie;
         // increment the indicator for the next open spot until it finds one
         //   or reaches the end of the inventory
         do
@@ -87,18 +84,22 @@ public class Inventory : MonoBehaviour
      * If the count drops to zero, the item is removed from the inventory.
      * This will update the hotbar as needed.
      */
-    public InventoryEntry Remove(int index)
+    public GameObject Remove(int index)
     {
         InventoryEntry o;
         if (inventory[index] == null)
             return null;
         o = inventory[index];
+
+        // create game object from InventoryEntry
+        GameObject plantableObject = (GameObject)Instantiate(Resources.Load(o.prefabName));
+
         inventory[index].count--;
-        if(inventory[index].count == 0)
+        if (inventory[index].count == 0)
             inventory[index] = null;
-        if(index < nextInventory)
+        if (index < nextInventory)
             nextInventory = index;
         UpdateHotbar(hotbar, inventory);
-        return o;
+        return plantableObject;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 
 public abstract class PlantableObject : MonoBehaviour
 {
+    public string prefabName;
     public string species;
     public int currentSize;
     public int maxSize;

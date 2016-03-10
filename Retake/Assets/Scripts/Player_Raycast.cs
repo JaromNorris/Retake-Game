@@ -7,23 +7,27 @@ public class Player_Raycast : MonoBehaviour
 {
 
     public float viewDistance;
+    public float wateringRate;
+    public float pollutionRate;
     public GameObject CanvasText;
     private RaycastHit hitObj;
 
     public GameObject TestSeed;
     public GameObject TestPlant;
 
-	//Array of all of our prefabs for seeds and plants
+	// Array of all of our prefabs for seeds and plants
 	public GameObject[] plantPrefabs;
 
     Inventory playerInventory;
-    //Inventory.Hotbar playerHotbar;
+    float waterTimer;
+    float pollutionTimer;
 
     // Use this for initialization
     void Start()
     {
         playerInventory = GetComponent<Inventory>();
-        //playerHotbar = playerInventory.hotbar;
+        waterTimer = 0;
+        pollutionTimer = 0;
 
     }
 
@@ -41,6 +45,21 @@ public class Player_Raycast : MonoBehaviour
 
             if (hitObj.collider.tag == "Plantable")
             {
+                Plantable_Space space;
+                if ((space = hitObj.collider.gameObject.GetComponent<Plantable_Space>()) != null && !space.occupied)
+                {
+                    GameObject plantableObject;
+                    if ((plantableObject = playerInventory.Remove(playerInventory.currentIndex)) != null)
+                    {
+                        plantableObject.transform.position = hitObj.transform.position;
+                        plantableObject.transform.rotation = hitObj.transform.rotation;
+                        if (!space.addPlantableObject(plantableObject))
+                            Debug.LogWarning("That object cannot be planted there.");
+                    }
+                }
+
+                // old planting code
+                /*
                 if (!hitObj.collider.gameObject.GetComponent<Plantable_Space>().occupied)
                 {
                     GameObject planted;
@@ -66,27 +85,9 @@ public class Player_Raycast : MonoBehaviour
                     else
                         CanvasText.GetComponent<Text>().text = "No item in slot " + (playerInventory.currentIndex + 1);
                 }
+                */
             }
-			//We're picking up a new Seed to fill the inventory
-			else if(hitObj.collider.tag == "NewSeed")
-			{
-				Debug.Log ("hit");
-				//If we want to pick up seeds one by one, simply pull from Resources the prefab and add the Seed script
-				GameObject newSeed = Instantiate(Resources.Load(hitObj.collider.gameObject.GetComponent<New_Seed>().name)) as GameObject;
-				playerInventory.Add(newSeed.GetComponent<Seed>());
-				Destroy (newSeed);
-				Destroy (hitObj.collider.gameObject);
-
-				/*
-				If we want to be able to grab them in bunches (One new seed object holds multiple seeds)
-1				GameObject newSeed = Instantiate(Resources.Load(hitObj.collider.gameObject.GetComponent<New_Seed>().name)) as GAmeObject;
-				for(int i = 0; i < newSeed.GetComponent<New_Seed>().number_of; i++)
-				{
-				playerInventory.Add(newSeed.GetComponent<Seed>());
-				}
-				Destroy(newSeed);
-				*/
-			}
+			
         }
         // Looking at object and right-click
         // Interact with an object if possible.
@@ -100,6 +101,40 @@ public class Player_Raycast : MonoBehaviour
             if((triggerObject = hitObj.collider.gameObject.GetComponent<TriggerObject>()) != null)
                 triggerObject.Activate();
 
+            InventoryEntry entry;
+            // We're picking up a new Seed to fill the inventory
+            if (hitObj.collider.tag == "NewSeed")
+            {
+                Debug.Log("hit");
+                New_Seed seed;
+                //If we want to pick up seeds one by one, simply pull from Resources the prefab and add the Seed script
+                if((seed = hitObj.collider.gameObject.GetComponent<New_Seed>()) != null)
+                {
+                    entry = ScriptableObject.CreateInstance("InventoryEntry") as InventoryEntry;
+                    entry.SetInventoryEntry(seed); // this should automatically add the correct number of seeds for clumps of loose seeds
+                    playerInventory.Add(entry);
+                    Destroy(hitObj.collider.gameObject);
+                }
+                //GameObject newSeed = Instantiate(Resources.Load(hitObj.collider.gameObject.GetComponent<New_Seed>().name)) as GameObject;
+                //playerInventory.Add(newSeed.GetComponent<Seed>());
+                //Destroy(newSeed);
+            }
+            // we hit a plantable space
+            else if (hitObj.collider.tag == "Plantable")
+            {
+                if ((entry = hitObj.collider.gameObject.GetComponent<Plantable_Space>().removePlantableObject()) != null)
+                    playerInventory.Add(entry);
+            }
+            // we hit a plantable object within a plantable space
+            else if (hitObj.collider.tag == "Plant" || hitObj.collider.tag == "Seed")
+            {
+                PlantableObject currentObject = hitObj.collider.gameObject.GetComponent<PlantableObject>();
+                if ((entry = currentObject.currentSpace.removePlantableObject()) != null)
+                    playerInventory.Add(entry);
+            }
+
+            // old removal code
+            /*
             // we hit a plantable space
             if (hitObj.collider.tag == "Plantable")
             {
@@ -160,7 +195,47 @@ public class Player_Raycast : MonoBehaviour
                 currentSeed.currentSpace.currentSeed = null;
                 Destroy(hitObj.collider.gameObject);
             }
+            */
         }
+
+        // Looking at object and pressing 'q'
+        // Waters plant or seed if in range
+        else if (Input.GetKey(KeyCode.Q) && Physics.Raycast(this.transform.position, this.transform.forward, out hitObj, viewDistance))
+        {
+            Plantable_Space plantSpace;
+            // we hit a plantable space
+            if (hitObj.collider.tag == "Plantable")
+            {
+                plantSpace = hitObj.collider.gameObject.GetComponent<Plantable_Space>();
+                if (waterTimer >= 1)
+                {
+                    if (plantSpace.waterPresent < 10)
+                        plantSpace.waterPresent += 1;
+                    waterTimer = 0;
+                }
+            }
+        }
+        // Looking at object and pressing 'e'
+        // Decontaminates soil if in range
+        else if (Input.GetKey(KeyCode.E) && Physics.Raycast(this.transform.position, this.transform.forward, out hitObj, viewDistance))
+        {
+            Plantable_Space plantSpace;
+            // we hit a plantable space
+            if (hitObj.collider.tag == "Plantable")
+            {
+                plantSpace = hitObj.collider.gameObject.GetComponent<Plantable_Space>();
+                if (pollutionTimer >= 1)
+                {
+                    if (plantSpace.pollutionPresent > 0)
+                        plantSpace.pollutionPresent -= 1;
+                    pollutionTimer = 0;
+                }
+            }
+        }
+
+        // update the resource modification timers
+        waterTimer += wateringRate / 10;
+        pollutionTimer += pollutionRate / 10;
 
         // I am hijacking this space so we can have all of our user inputs in one place
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -255,6 +330,7 @@ public class Player_Raycast : MonoBehaviour
                 CanvasText.GetComponent<Text>().text = "No item in slot 10";
         }
 
+        /*
         // refill the player's inventory
         else if(Input.GetKeyDown(KeyCode.Return))
         {
@@ -271,6 +347,7 @@ public class Player_Raycast : MonoBehaviour
             CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
                 + playerInventory.currentItem.type + " (" + playerInventory.currentItem.count + ")";
         }
+        */
 
     }
 

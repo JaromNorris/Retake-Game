@@ -57,4 +57,49 @@ public class Plantable_Space : MonoBehaviour
 		// Change texture to "wetter" than present and if occupied trigger particles
 		
 	}
+
+    public bool addPlantableObject(GameObject obj)
+    {
+        if (occupied)
+            return false;
+        obj.transform.parent = transform;
+        Plant plant;
+        Seed seed;
+        if ((plant = obj.GetComponent<Plant>()) != null)
+        {
+            currentPlant = plant;
+            currentPlant.currentSpace = this;
+        }
+        else if ((seed = obj.GetComponent<Seed>()) != null)
+        {
+            currentSeed = seed;
+            currentSeed.currentSpace = this;
+        }
+        occupied = true;
+        return true;
+    }
+
+    public InventoryEntry removePlantableObject()
+    {
+        // get the current object for removal
+        PlantableObject deleteObject;
+        if (currentPlant != null)
+            deleteObject = currentPlant;
+        else if (currentSeed != null)
+            deleteObject = currentSeed;
+        else return null;
+
+        // make sure the plant can be added to the player's inventory after destruction
+        InventoryEntry entry = ScriptableObject.CreateInstance("InventoryEntry") as InventoryEntry;
+        entry.SetInventoryEntry(deleteObject);
+
+        // remove the object
+        Destroy(deleteObject.gameObject);
+
+        // indicate that the space is now empty
+        currentSeed = null;
+        currentPlant = null;
+        occupied = false;
+        return entry;
+    }
 }

@@ -24,5 +24,6 @@ public class MoveTrigger : TriggerTarget
         xCoordinate = temp.x;
         yCoordinate = temp.y;
         zCoordinate = temp.z;
+        PrintMessage();
     }
 }

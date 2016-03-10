@@ -15,5 +15,6 @@ public class RemoveTrigger : TriggerTarget
         if (triggerType != TriggerTarget.TriggerBehavior.Remove)
             return;
         Destroy(gameObject, timeToDestroy);
+        PrintMessage();
     }
 }
