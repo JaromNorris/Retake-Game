@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class Player_Raycast : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class Player_Raycast : MonoBehaviour
     public GameObject TestSeed;
     public GameObject TestPlant;
 
+	//Array of all of our prefabs for seeds and plants
+	public GameObject[] plantPrefabs;
+
     Inventory playerInventory;
     //Inventory.Hotbar playerHotbar;
 
@@ -20,6 +24,7 @@ public class Player_Raycast : MonoBehaviour
     {
         playerInventory = GetComponent<Inventory>();
         //playerHotbar = playerInventory.hotbar;
+
     }
 
     // Update is called once per frame
@@ -41,7 +46,7 @@ public class Player_Raycast : MonoBehaviour
                     GameObject planted;
                     if (playerInventory.currentItem.type.Equals("Plant"))
                     {
-                        planted = Instantiate(TestPlant, hitObj.transform.position, hitObj.transform.rotation) as GameObject;
+                        planted = Instantiate(Resources.Load ("TestPlant"), hitObj.transform.position, hitObj.transform.rotation) as GameObject;
                         hitObj.collider.GetComponent<Plantable_Space>().occupied = true;
                         hitObj.collider.GetComponent<Plantable_Space>().currentPlant = planted.GetComponent<Plant>();
 						planted.GetComponent<PlantableObject>().currentSpace = hitObj.collider.gameObject.GetComponent<Plantable_Space>();
@@ -62,6 +67,22 @@ public class Player_Raycast : MonoBehaviour
                         CanvasText.GetComponent<Text>().text = "No item in slot " + (playerInventory.currentIndex + 1);
                 }
             }
+			//We're picking up a new Seed to fill the inventory
+			else if(hitObj.collider.tag == "NewSeed")
+			{
+				/*
+				 * If we want to pick up seeds one by one, simply pull from Resources the prefab and add the Seed script
+				GameObject newSeed = Instantiate(Resources.Load(hitObj.collider.gameObject.GetComponent<New_Seed>().name)) as GameObject;
+				playerInventory.Add(newSeed.GetComponent<Seed>());
+				*
+				*If we want to be able to grab them in bunches (One new seed object holds multiple seeds)
+1				GameObject newSeed = Instantiate(Resources.Load(hitObj.collider.gameObject.GetComponent<New_Seed>().name)) as GAmeObject;
+				for(int i = 0; i < newSeed.GetComponent<New_Seed>().number_of; i++)
+				{
+				playerInventory.Add(newSeed.GetComponent<Seed>());
+				}
+				*/
+			}
         }
         // Looking at object and right-click
         // Interact with an object if possible.
