@@ -1751,6 +1751,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -4693,6 +4694,22 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91f7d8005752cdf448f4c684f1445123, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &749562034 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 134170, guid: 91f7d8005752cdf448f4c684f1445123, type: 2}
+  m_PrefabInternal: {fileID: 749562033}
+--- !u!114 &749562035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 749562034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7228471e357f41e4cab1a3320223b6c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToDestroy: 1.5
 --- !u!1 &752845693
 GameObject:
   m_ObjectHideFlags: 0
@@ -5215,6 +5232,7 @@ GameObject:
   - 33: {fileID: 803775917}
   - 65: {fileID: 803775916}
   - 23: {fileID: 803775915}
+  - 114: {fileID: 803775919}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -5277,6 +5295,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1399090673}
   m_RootOrder: 3
+--- !u!114 &803775919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 803775914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd738c24ba1c0564d901c5e7792d37e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObjects:
+  - {fileID: 749562034}
+  triggerType: 1
 --- !u!1001 &809672508
 Prefab:
   m_ObjectHideFlags: 0
