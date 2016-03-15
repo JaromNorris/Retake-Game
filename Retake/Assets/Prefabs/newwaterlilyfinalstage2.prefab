@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &110538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 483996}
+  - 33: {fileID: 3361102}
+  - 23: {fileID: 2321320}
+  m_Layer: 0
+  m_Name: newwaterlilyfinalstage2:polySurface1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &198962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 496480}
+  - 95: {fileID: 9593248}
+  - 114: {fileID: 11448618}
+  - 65: {fileID: 6564928}
+  m_Layer: 0
+  m_Name: newwaterlilyfinalstage2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &483996
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110538}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.51799811e-05, y: .00138812512, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 496480}
+  m_RootOrder: 0
+--- !u!4 &496480
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198962}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.475708, y: 4.69999981, z: 12.1738091}
+  m_LocalScale: {x: 47.4903488, y: 47.4903145, z: 47.4903145}
+  m_Children:
+  - {fileID: 483996}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!23 &2321320
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110538}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 17aafa2540079cf428d393e98f887ac6, type: 2}
+  - {fileID: 2100000, guid: 28eb18d9cdcc46841af5d32bcbcb0630, type: 2}
+  - {fileID: 2100000, guid: 89532e6b258ef2446b82cf3dab95a741, type: 2}
+  - {fileID: 2100000, guid: 244451bb5ec7d8b4084c66bbc74018af, type: 2}
+  - {fileID: 2100000, guid: dc8e4b18f0f723f4e8574a7b8a59ad4c, type: 2}
+  - {fileID: 2100000, guid: 44386da4e0c6b7a4790afc3127457119, type: 2}
+  - {fileID: 2100000, guid: f7858fa079356e747b58f28713546d72, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &3361102
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110538}
+  m_Mesh: {fileID: 4300000, guid: 076ccee6ac9d75141a7710fdd7021628, type: 3}
+--- !u!65 &6564928
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198962}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .0160000008, y: .00100000005, z: .0160000008}
+  m_Center: {x: .000500000024, y: -.00100000005, z: 0}
+--- !u!95 &9593248
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198962}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 076ccee6ac9d75141a7710fdd7021628, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11448618
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4b50e5e9e2400444bf312d5869164e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabName: WaterLillyFinal
+  species: Water Lilly
+  currentSize: 1
+  maxSize: 1
+  lightRequired: 0
+  waterRequired: 0
+  pollutionRequired: 0
+  currentSpace: {fileID: 0}
+  nextGrowth: {fileID: 0}
+  Sun: {fileID: 0}
+  timePlanted: 0
+  secondsInDay: 0
+  daysSincePlanted: 0
+  daysToMature: 0
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 198962}
+  m_IsPrefabParent: 1

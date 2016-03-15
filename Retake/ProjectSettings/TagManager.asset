@@ -7,7 +7,7 @@ TagManager:
   - Plant
   - Seed
   - Plantable
-  - NewSeed
+  - Ladder
   layers:
   - Default
   - TransparentFX

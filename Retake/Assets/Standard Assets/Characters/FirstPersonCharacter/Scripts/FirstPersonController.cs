@@ -10,9 +10,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
+		public bool canClimb;
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
+		[SerializeField] private float m_ClimbSpeed;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
         [SerializeField] private float m_JumpSpeed;
         [SerializeField] private float m_StickToGroundForce;
@@ -91,6 +93,24 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_NextStep = m_StepCycle + .5f;
         }
 
+		private void OnTriggerEnter (Collider col)
+		{
+			Debug.Log ("Tada");
+			if(col.gameObject.tag == "Ladder")
+			{
+				canClimb = true;
+				//Debug.Log(m_MoveDir);
+			}
+		}
+
+		void OnTriggerExit (Collider col)
+		{
+			if(col.gameObject.tag == "Ladder")
+			{
+				canClimb = false;
+				Debug.Log ("Disconnect");
+			}
+		}
 
         private void FixedUpdate()
         {
@@ -107,12 +127,35 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             m_MoveDir.x = desiredMove.x*speed;
             m_MoveDir.z = desiredMove.z*speed;
+			if (canClimb) {
+
+				//Debug.Log ("x dir =");
+				//Debug.Log (m_MoveDir.x);
+				m_MoveDir.y = Mathf.Abs(m_MoveDir.x) * m_ClimbSpeed;
+				//Debug.Log ("z dir =");
+				//Debug.Log (m_MoveDir.z);
+				m_MoveDir.y = Mathf.Abs (m_MoveDir.z) * m_ClimbSpeed;
+				//if (Input.GetKeyDown (KeyCode.W)) {
+				//	FirstPersonController.transform.Translate (Vector3(0,0,1) * 1);
+					//m_MoveDir.y = m_ClimbSpeed * 1;
+				//	Debug.Log ("Goin up");
+				}
+				Debug.Log ("y dir =");
+				Debug.Log (m_MoveDir.y);
+		//	} else {
+		//		m_StickToGroundForce;
+
+		//	}
 
 
             if (m_CharacterController.isGrounded)
             {
-                m_MoveDir.y = -m_StickToGroundForce;
-
+				if (canClimb){
+					//Debug.Log ("Shouldn't stick");
+				}else {
+					m_MoveDir.y = -m_StickToGroundForce;
+					//Debug.Log("Should stick");
+				}
                 if (m_Jump)
                 {
                     m_MoveDir.y = m_JumpSpeed;
