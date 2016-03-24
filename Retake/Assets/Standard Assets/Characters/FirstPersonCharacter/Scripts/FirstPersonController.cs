@@ -140,8 +140,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 					//m_MoveDir.y = m_ClimbSpeed * 1;
 				//	Debug.Log ("Goin up");
 				}
-				Debug.Log ("y dir =");
-				Debug.Log (m_MoveDir.y);
+				//Debug.Log ("y dir =");
+				//Debug.Log (m_MoveDir.y);
 		//	} else {
 		//		m_StickToGroundForce;
 
