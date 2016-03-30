@@ -17356,7 +17356,7 @@ Animator:
   m_GameObject: {fileID: 187298}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: aad595beb63b28146991751bbb7cdf8b, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2433a233a9f2b4f96a63f45510e60d43, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -17380,7 +17380,7 @@ MonoBehaviour:
   currentSize: 1
   maxSize: 1
   lightRequired: 0
-  waterRequired: 1
+  waterRequired: 0
   pollutionRequired: 0
   currentSpace: {fileID: 0}
   nextGrowth: {fileID: 0}
@@ -17420,6 +17420,18 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0f34106b1693adc41a9c9513b9159069, type: 2}
+    - target: {fileID: 0}
+      propertyPath: daysToMature
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2433a233a9f2b4f96a63f45510e60d43, type: 2}
+    - target: {fileID: 0}
+      propertyPath: waterRequired
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 187298}

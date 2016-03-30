@@ -24,5 +24,6 @@ public class InventoryEntry : ScriptableObject
     {
         prefabName = _seed.name;
         count = _seed.number_of;
+		type = "seed";
     }
 }

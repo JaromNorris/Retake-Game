@@ -71,6 +71,7 @@ public abstract class PlantableObject : MonoBehaviour
 		{
 		//Start the growth particle process
 			growthParticles.Play();
+
 		//Wait until the particles are done
 		//*******IMPORTANT******** THE PARTICLE SYSTEM SHOULD NOT LOOP
 		StartCoroutine(finishGrowth(growthParticles.duration));
@@ -85,6 +86,7 @@ public abstract class PlantableObject : MonoBehaviour
 		GameObject grew = Instantiate(nextGrowth, this.transform.position, this.transform.rotation) as GameObject;
 		currentSpace.GetComponent<Plantable_Space>().currentPlant = grew.GetComponent<Plant>();
 		grew.GetComponent<PlantableObject>().currentSpace = currentSpace;
+		nextGrowth.GetComponent<Animator>().SetBool("Active", true);
 		//Destroy this plant.
 		Destroy (this.gameObject);
 	}
