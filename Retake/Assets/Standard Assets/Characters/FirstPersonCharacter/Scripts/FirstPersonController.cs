@@ -131,14 +131,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 				//Debug.Log ("x dir =");
 				//Debug.Log (m_MoveDir.x);
-				m_MoveDir.y = Mathf.Abs(m_MoveDir.x) * m_ClimbSpeed;
+
+				m_MoveDir.y = m_MoveDir.magnitude - Math.Abs (m_MoveDir.y);
 				//Debug.Log ("z dir =");
 				//Debug.Log (m_MoveDir.z);
-				m_MoveDir.y = Mathf.Abs (m_MoveDir.z) * m_ClimbSpeed;
-				//if (Input.GetKeyDown (KeyCode.W)) {
-				//	FirstPersonController.transform.Translate (Vector3(0,0,1) * 1);
-					//m_MoveDir.y = m_ClimbSpeed * 1;
-				//	Debug.Log ("Goin up");
+
+				if (Input.GetKeyDown (KeyCode.Space)) {
+					canClimb = false;
+					}
 				}
 				//Debug.Log ("y dir =");
 				//Debug.Log (m_MoveDir.y);
