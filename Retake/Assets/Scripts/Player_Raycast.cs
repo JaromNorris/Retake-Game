@@ -5,18 +5,18 @@ using System.Collections.Generic;
 
 public class Player_Raycast : MonoBehaviour
 {
-
     public float viewDistance;
     public float wateringRate;
     public float pollutionRate;
     public GameObject CanvasText;
+    public GameObject waterMask;
     private RaycastHit hitObj;
 
     public GameObject TestSeed;
     public GameObject TestPlant;
 
-	private int maxWater = 100;
-	private int minWater = 0;
+	public int maxWater = 100;
+	public int minWater = 0;
 	public float currentWater = 100f;
 
 	// Array of all of our prefabs for seeds and plants
@@ -25,17 +25,16 @@ public class Player_Raycast : MonoBehaviour
 	ParticleSystem waterParticles;
 
     Inventory playerInventory;
-    float waterTimer;
-    float pollutionTimer;
+    float trueWaterRate;
+    float truePollutionRate;
 
     // Use this for initialization
     void Start()
     {
         playerInventory = GetComponent<Inventory>();
-        waterTimer = 0;
-        pollutionTimer = 0;
+        trueWaterRate = wateringRate * Time.deltaTime;
+        truePollutionRate = pollutionRate * Time.deltaTime;
 		waterParticles = this.GetComponentInChildren<ParticleSystem>();
-
     }
 
     // Update is called once per frame
@@ -118,17 +117,21 @@ public class Player_Raycast : MonoBehaviour
         else if (Input.GetKey(KeyCode.Q) && currentWater > 0)
         {
 			if(currentWater > minWater)
-			{
-			currentWater -= (10 * Time.deltaTime);
+			{ 
+			    currentWater -= trueWaterRate;
+                RectTransform rt = waterMask.GetComponent<RectTransform>();
+                rt.sizeDelta = new Vector2(rt.sizeDelta.x, rt.sizeDelta.y - trueWaterRate);
+                if (waterParticles.isStopped)
+                    waterParticles.Play();
+                if (!waterParticles.enableEmission)
+                    waterParticles.enableEmission = true;
 			}
 			else if (currentWater < minWater)
 			{
 				currentWater = 0;
+                waterParticles.enableEmission = false;
 			}
-			if(waterParticles.isStopped)
-			{
-				waterParticles.Play ();
-			}
+			
 
 			//We hit an object
 			if(Physics.Raycast(this.transform.position, this.transform.forward, out hitObj, viewDistance))
@@ -138,18 +141,14 @@ public class Player_Raycast : MonoBehaviour
 	            if (hitObj.collider.tag == "Plantable")
 	            {
 	                plantSpace = hitObj.collider.gameObject.GetComponent<Plantable_Space>();
-	                if (waterTimer >= 1)
-	                {
-	                    if (plantSpace.waterPresent < 10)
-	                        plantSpace.waterPresent += 1;
-	                    waterTimer = 0;
-	                }
+	                if (plantSpace.waterPresent < plantSpace.maximumWater)
+	                    plantSpace.waterPresent += trueWaterRate;
 	            }
 			}
         }
-		if(!Input.GetKey(KeyCode.Q)  && waterParticles.isPlaying)
+		else if(waterParticles.enableEmission)
 		{
-			waterParticles.Stop();
+            waterParticles.enableEmission = false;
 		}
         // Looking at object and pressing 'e'
         // Decontaminates soil if in range
@@ -160,18 +159,10 @@ public class Player_Raycast : MonoBehaviour
             if (hitObj.collider.tag == "Plantable")
             {
                 plantSpace = hitObj.collider.gameObject.GetComponent<Plantable_Space>();
-                if (pollutionTimer >= 1)
-                {
-                    if (plantSpace.pollutionPresent > 0)
-                        plantSpace.pollutionPresent -= 1;
-                    pollutionTimer = 0;
-                }
+                if (plantSpace.pollutionPresent > 0)
+                    plantSpace.pollutionPresent -= truePollutionRate;
             }
         }
-
-        // update the resource modification timers
-        waterTimer += wateringRate / 10;
-        pollutionTimer += pollutionRate / 10;
 
         // I am hijacking this space so we can have all of our user inputs in one place
         if (Input.GetKeyDown(KeyCode.Alpha1))

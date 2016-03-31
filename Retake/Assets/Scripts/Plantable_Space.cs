@@ -4,8 +4,10 @@ using System.Collections;
 public class Plantable_Space : MonoBehaviour
 {
 	public bool occupied;
-	public int waterPresent;
-	public int pollutionPresent;
+	public float waterPresent;
+    public float maximumWater;
+	public float pollutionPresent;
+    public float maximumPollution;
 	public Seed currentSeed;
 	public Plant currentPlant;
 	public Plantable_Zone parentZone;
