@@ -15,8 +15,14 @@ public class Player_Raycast : MonoBehaviour
     public GameObject TestSeed;
     public GameObject TestPlant;
 
+	private int maxWater = 100;
+	private int minWater = 0;
+	public float currentWater = 100f;
+
 	// Array of all of our prefabs for seeds and plants
 	public GameObject[] plantPrefabs;
+
+	ParticleSystem waterParticles;
 
     Inventory playerInventory;
     float waterTimer;
@@ -28,6 +34,7 @@ public class Player_Raycast : MonoBehaviour
         playerInventory = GetComponent<Inventory>();
         waterTimer = 0;
         pollutionTimer = 0;
+		waterParticles = this.GetComponentInChildren<ParticleSystem>();
 
     }
 
@@ -58,35 +65,6 @@ public class Player_Raycast : MonoBehaviour
                             Debug.LogWarning("That object cannot be planted there.");
                     }
                 }
-
-                // old planting code
-                /*
-                if (!hitObj.collider.gameObject.GetComponent<Plantable_Space>().occupied)
-                {
-                    GameObject planted;
-                    if (playerInventory.currentItem.type.Equals("Plant"))
-                    {
-                        planted = Instantiate(Resources.Load ("TestPlant"), hitObj.transform.position, hitObj.transform.rotation) as GameObject;
-                        hitObj.collider.GetComponent<Plantable_Space>().occupied = true;
-                        hitObj.collider.GetComponent<Plantable_Space>().currentPlant = planted.GetComponent<Plant>();
-						planted.GetComponent<PlantableObject>().currentSpace = hitObj.collider.gameObject.GetComponent<Plantable_Space>();
-                        playerInventory.Remove(playerInventory.currentIndex);
-                    }
-                    else
-                    {
-                        planted = Instantiate(TestSeed, hitObj.transform.position, hitObj.transform.rotation) as GameObject;
-                        hitObj.collider.GetComponent<Plantable_Space>().occupied = true;
-						hitObj.collider.GetComponent<Plantable_Space>().currentSeed = planted.GetComponent<Seed>();
-						planted.GetComponent<PlantableObject>().currentSpace = hitObj.collider.gameObject.GetComponent<Plantable_Space>();
-						playerInventory.Remove(playerInventory.currentIndex);
-                    }
-                    if(playerInventory.currentItem != null)
-                        CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
-                            + playerInventory.currentItem.type + " (" + playerInventory.currentItem.count + ")";
-                    else
-                        CanvasText.GetComponent<Text>().text = "No item in slot " + (playerInventory.currentIndex + 1);
-                }
-                */
             }
 			
         }
@@ -133,89 +111,46 @@ public class Player_Raycast : MonoBehaviour
                 if ((entry = currentObject.currentSpace.removePlantableObject()) != null)
                     playerInventory.Add(entry);
             }
-
-            // old removal code
-            /*
-            // we hit a plantable space
-            if (hitObj.collider.tag == "Plantable")
-            {
-                // there is an object in the plantable space
-                Plantable_Space plantSpace;
-                if ((plantSpace = hitObj.collider.gameObject.GetComponent<Plantable_Space>()).occupied)
-                {
-                    plantSpace.occupied = false;
-                    // the object is a plant
-                    if (plantSpace.currentPlant != null)
-                    {
-                        // add the plant to the player's inventory
-                        Plant currentPlant = plantSpace.currentPlant;
-                        playerInventory.Add(currentPlant);
-                        if(playerInventory.currentItem != null && currentPlant.Type.Equals(playerInventory.currentItem.type))
-                            CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
-                                + playerInventory.currentItem.type + " (" + playerInventory.currentItem.count + ")";
-                        // remove the plant object from the scene
-                        Destroy(currentPlant.gameObject);
-                    }
-                    // the object is a seed
-                    else if (plantSpace.currentSeed != null)
-                    {
-                        // add the seed to the player's inventory
-                        Seed currentSeed = plantSpace.currentSeed;
-                        playerInventory.Add(currentSeed);
-                        if (playerInventory.currentItem != null && currentSeed.Type.Equals(playerInventory.currentItem.type))
-                            CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
-                                + playerInventory.currentItem.type + " (" + playerInventory.currentItem.count + ")";
-                        // remove the seed object from the scene
-                        Destroy(currentSeed.gameObject);
-                    }
-                    // indicate that the space is now empty
-                    plantSpace.currentSeed = null;
-                    plantSpace.currentPlant = null;
-                }
-            }
-            // we hit a plant
-            else if (hitObj.collider.tag == "Plant")
-            {
-                Plant currentPlant = hitObj.collider.gameObject.GetComponent<Plant>();
-                if (playerInventory.currentItem != null && currentPlant.Type.Equals(playerInventory.currentItem.type))
-                    CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
-                        + playerInventory.currentItem.type + " (" + playerInventory.currentItem.count + ")";
-                playerInventory.Add(currentPlant);
-                currentPlant.currentSpace.occupied = false;
-                currentPlant.currentSpace.currentPlant = null;
-                Destroy(hitObj.collider.gameObject);
-            }
-            else if (hitObj.collider.tag == "Seed")
-            {
-                Seed currentSeed = hitObj.collider.gameObject.GetComponent<Seed>();
-                if (playerInventory.currentItem != null && currentSeed.Type.Equals(playerInventory.currentItem.type))
-                    CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
-                        + playerInventory.currentItem.type + " (" + playerInventory.currentItem.count + ")";
-                playerInventory.Add(currentSeed);
-                currentSeed.currentSpace.occupied = false;
-                currentSeed.currentSpace.currentSeed = null;
-                Destroy(hitObj.collider.gameObject);
-            }
-            */
         }
 
         // Looking at object and pressing 'q'
         // Waters plant or seed if in range
-        else if (Input.GetKey(KeyCode.Q) && Physics.Raycast(this.transform.position, this.transform.forward, out hitObj, viewDistance))
+        else if (Input.GetKey(KeyCode.Q) && currentWater > 0)
         {
-            Plantable_Space plantSpace;
-            // we hit a plantable space
-            if (hitObj.collider.tag == "Plantable")
-            {
-                plantSpace = hitObj.collider.gameObject.GetComponent<Plantable_Space>();
-                if (waterTimer >= 1)
-                {
-                    if (plantSpace.waterPresent < 10)
-                        plantSpace.waterPresent += 1;
-                    waterTimer = 0;
-                }
-            }
+			if(currentWater > minWater)
+			{
+			currentWater -= (10 * Time.deltaTime);
+			}
+			else if (currentWater < minWater)
+			{
+				currentWater = 0;
+			}
+			if(waterParticles.isStopped)
+			{
+				waterParticles.Play ();
+			}
+
+			//We hit an object
+			if(Physics.Raycast(this.transform.position, this.transform.forward, out hitObj, viewDistance))
+			{
+	            Plantable_Space plantSpace;
+	            // we hit a plantable space
+	            if (hitObj.collider.tag == "Plantable")
+	            {
+	                plantSpace = hitObj.collider.gameObject.GetComponent<Plantable_Space>();
+	                if (waterTimer >= 1)
+	                {
+	                    if (plantSpace.waterPresent < 10)
+	                        plantSpace.waterPresent += 1;
+	                    waterTimer = 0;
+	                }
+	            }
+			}
         }
+		if(!Input.GetKey(KeyCode.Q)  && waterParticles.isPlaying)
+		{
+			waterParticles.Stop();
+		}
         // Looking at object and pressing 'e'
         // Decontaminates soil if in range
         else if (Input.GetKey(KeyCode.E) && Physics.Raycast(this.transform.position, this.transform.forward, out hitObj, viewDistance))
