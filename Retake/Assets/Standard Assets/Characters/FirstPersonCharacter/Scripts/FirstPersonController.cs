@@ -63,6 +63,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Update is called once per frame
         private void Update()
         {
+			m_Camera = Camera.main;
             RotateView();
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
@@ -95,7 +96,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 		private void OnTriggerEnter (Collider col)
 		{
-			Debug.Log ("Tada");
+			//Debug.Log ("Tada");
 			if(col.gameObject.tag == "Ladder")
 			{
 				canClimb = true;

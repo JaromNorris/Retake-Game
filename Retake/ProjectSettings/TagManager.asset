@@ -8,6 +8,9 @@ TagManager:
   - Seed
   - Plantable
   - Ladder
+  - NewSeed
+  - ThirdPersonCamera
+  - FirstPersonCamera
   layers:
   - Default
   - TransparentFX
