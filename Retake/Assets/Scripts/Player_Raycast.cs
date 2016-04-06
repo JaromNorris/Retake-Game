@@ -8,7 +8,7 @@ public class Player_Raycast : MonoBehaviour
     public float viewDistance;
     public float wateringRate;
     public float pollutionRate;
-    public GameObject CanvasText;
+    public GameObject UICanvas;
     public GameObject waterMask;
     private RaycastHit hitObj;
 
@@ -28,6 +28,11 @@ public class Player_Raycast : MonoBehaviour
     float trueWaterRate;
     float truePollutionRate;
 
+	private UnityEngine.UI.Text rightText;
+	private UnityEngine.UI.Text leftText;
+
+	private GameObject lookingAt;
+
     // Use this for initialization
     void Start()
     {
@@ -35,6 +40,9 @@ public class Player_Raycast : MonoBehaviour
         trueWaterRate = wateringRate * Time.deltaTime;
         truePollutionRate = pollutionRate * Time.deltaTime;
 		waterParticles = this.GetComponentInChildren<ParticleSystem>();
+
+		rightText = GameObject.Find ("RightClick").GetComponent<Text>();
+		leftText = GameObject.Find ("LeftClick").GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -42,6 +50,48 @@ public class Player_Raycast : MonoBehaviour
     {
         // Debug view of the ray
         Debug.DrawRay(this.transform.position, this.transform.forward * viewDistance, Color.blue);
+
+		//Looking at object
+		if(Physics.Raycast (this.transform.position,this.transform.forward, out hitObj, viewDistance))
+		{
+			if(hitObj.collider.tag == "Plantable")
+			{
+				if(lookingAt != hitObj.collider.gameObject && lookingAt !=null)
+				{
+					lookingAt.GetComponent<ParticleSystem>().Stop();
+				}
+				lookingAt = hitObj.collider.gameObject;
+
+				if(lookingAt.GetComponent<ParticleSystem>().isStopped)
+				{
+				lookingAt.GetComponent<ParticleSystem>().Play ();
+				}
+				if(playerInventory.currentItem != null)
+				{
+				leftText.text = "Plant " + playerInventory.currentItem.prefabName;
+				}
+			}
+			else if(hitObj.collider.tag == "Seed" || hitObj.collider.tag == "Plant")
+			{
+				rightText.text = "Remove " + hitObj.collider.gameObject.GetComponent<PlantableObject>().name;
+			}
+			else if(hitObj.collider.tag == "NewSeed")
+			{
+				rightText.text = "Pick up " + hitObj.collider.gameObject.GetComponent<New_Seed>().name + " seed";
+			}
+
+		}
+		else
+		{
+			rightText.text = "";
+			leftText.text = "";
+			if(lookingAt != null){
+				Debug.Log ("looked away");
+				lookingAt.GetComponent<ParticleSystem>().Stop();
+				lookingAt = null;
+			}
+		}
+
 
         // Looking at object and left-click
         // Places an object from inventory if able
@@ -111,8 +161,7 @@ public class Player_Raycast : MonoBehaviour
                     playerInventory.Add(entry);
             }
         }
-
-        // Looking at object and pressing 'q'
+		
         // Waters plant or seed if in range
         else if (Input.GetKey(KeyCode.Q) && currentWater > 0)
         {
@@ -164,6 +213,7 @@ public class Player_Raycast : MonoBehaviour
             }
         }
 
+		/*
         // I am hijacking this space so we can have all of our user inputs in one place
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -256,6 +306,7 @@ public class Player_Raycast : MonoBehaviour
             else
                 CanvasText.GetComponent<Text>().text = "No item in slot 10";
         }
+        */
 
         /*
         // refill the player's inventory

@@ -21,6 +21,8 @@ public class Plantable_Space : MonoBehaviour
 		print(parentZone);
 	}
 
+
+
 	//For testing purposes we print out plant species
 	public string onLeftMouseDown(Seed playerSeed, Plant playerPlant)
 	{

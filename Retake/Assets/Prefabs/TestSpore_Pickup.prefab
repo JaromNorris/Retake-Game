@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 496638}
   - 95: {fileID: 9505476}
   - 114: {fileID: 11444292}
+  - 136: {fileID: 13617336}
   m_Layer: 0
   m_Name: TestSpore_Pickup
   m_TagString: NewSeed
@@ -53,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 133986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.8673477, y: 4.49738646, z: 3.4695549}
+  m_LocalPosition: {x: -45.4000015, y: -20.5, z: 239}
   m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children:
   - {fileID: 436110}
@@ -120,6 +121,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: TestSpore
   number_of: 1
+--- !u!136 &13617336
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133986}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .0108780311
+  m_Height: .0145415198
+  m_Direction: 1
+  m_Center: {x: .000263999653, y: .00282820989, z: -6.05359674e-08}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

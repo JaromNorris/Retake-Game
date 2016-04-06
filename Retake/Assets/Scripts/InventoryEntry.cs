@@ -23,6 +23,7 @@ public class InventoryEntry : ScriptableObject
     public void SetInventoryEntry(New_Seed _seed)
     {
         prefabName = _seed.name;
+		species = prefabName;
         count = _seed.number_of;
 		type = "seed";
     }
