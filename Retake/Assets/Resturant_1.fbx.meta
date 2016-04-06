@@ -99,6 +99,25 @@ ModelImporter:
     4300022: Refrigerator-Walk-In 47" x 70" [343255]
     4300024: Door-Exterior-Double-Two_Lite 96" x 84" [357039]
     4300026: Basic Roof Generic - 12" [357235]
+    6400000: Basic Roof Generic - 12" [357235]
+    6400002: Basic Wall Generic - 5" [329361]
+    6400004: Basic Wall Generic - 8" [315216]
+    6400006: Basic Wall Generic - 8" [315293]
+    6400008: Basic Wall Generic - 8" [315401]
+    6400010: Basic Wall Generic - 8" [315444]
+    6400012: Door-Exterior-Double-Two_Lite 96" x 84" [357039]
+    6400014: Door-Traffic-Eliason-(SCP-1)-Double 72" x 84" [329426]
+    6400016: Freezer-Soft_Serve-Taylor-Twist-(C712-C713) ERROR_LOAD TYPE CATALOG [334705]
+    6400018: Fryer 31" [340228]
+    6400020: Fryer 31" [340465]
+    6400022: Griddle-Grooved 60" x 31" [342152]
+    6400024: Griddle-Grooved 60" x 31" [342363]
+    6400026: QF_Eagle_CDTCL_cat CDTCL [330913]
+    6400028: QF_Eagle_F1916-VSCS F1916-VSCS [338679]
+    6400030: QF_Eagle_F1916-VSCS F1916-VSCS [338901]
+    6400032: Refrigerator-Walk-In 47" x 70" [343255]
+    6400034: Refrigerator-Walk-In 47" x 70" [343520]
+    6400036: Refrigerator-Walk-In 47" x 70" [344748]
   materials:
     importMaterials: 1
     materialName: 0
@@ -124,7 +143,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0

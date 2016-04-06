@@ -1276,6 +1276,298 @@ ModelImporter:
     4300172: Basic Roof Generic - 12" [443120]
     4300174: Rectangular Mullion 2.5" x 5" rectangular [443160]
     4300176: Rectangular Mullion 2.5" x 5" rectangular [443162]
+    6400000: Assembled Stair Stair [329437]_[329486]
+    6400002: Assembled Stair Stair [329437]_[329488]
+    6400004: Assembled Stair Stair [329437]_[329489]
+    6400006: Assembled Stair Stair [329437]_[329587]
+    6400008: Assembled Stair Stair [329437]_[329589]
+    6400010: Assembled Stair Stair [329437]_[329591]
+    6400012: Assembled Stair Stair [329437]_[329592]
+    6400014: Assembled Stair Stair [329437]_[329593]
+    6400016: Assembled Stair Stair [329437]_[329594]
+    6400018: ATM_-_Wall_Mounted_with_Depository_3731-1 ATM_-_Wall_Mounted_with_Depository_3731-1
+      [324386]
+    6400020: Basic Roof Generic - 12" [443120]
+    6400022: Basic Wall Generic - 12" [317999]
+    6400024: Basic Wall Generic - 12" [323371]
+    6400026: Basic Wall Generic - 12" [323702]
+    6400028: Basic Wall Generic - 12" [323796]
+    6400030: Basic Wall Generic - 12" [323864]
+    6400032: Basic Wall Generic - 12" [323939]
+    6400034: Basic Wall Generic - 12" [324046]
+    6400036: Basic Wall Generic - 12" [327968]
+    6400038: Basic Wall Generic - 12" [327969]
+    6400040: Basic Wall Generic - 12" [327970]
+    6400042: Basic Wall Generic - 12" [327971]
+    6400044: Basic Wall Generic - 12" [327972]
+    6400046: Basic Wall Generic - 12" [327973]
+    6400048: Basic Wall Generic - 12" [327974]
+    6400050: Basic Wall Generic - 5" 2 [329973]
+    6400052: Basic Wall Generic - 6" [327001]
+    6400054: Basic Wall Generic - 6" [327116]
+    6400056: Basic Wall Generic - 6" [327373]
+    6400058: Basic Wall Generic - 8" [438711]
+    6400060: Diebold_16039_Drive-thru_window_with_adjustable_drawer_3427-1 Diebold
+      Drive-thru Window_16'-1 3/4"_w/ drawer [325605]
+    6400062: Diebold_Night_Deposit_2879 Diebold_Night_Deposit_2879 [326905]
+    6400064: Floor Generic - 12" [327790]
+    6400066: Floor Generic - 12" [439612]
+    6400068: Locker-Evidence-Spacesaver-Controller_Cabinet Mode 2 - Pass Thru -Single
+      Rear Door [437167]
+    6400070: Locker-Evidence-Spacesaver-Controller_Cabinet Mode 2 - Pass Thru -Single
+      Rear Door [440626]
+    6400072: Locker-Evidence-Spacesaver-Controller_Cabinet Mode 2 - Pass Thru -Single
+      Rear Door [440721]
+    6400074: Locker-Evidence-Spacesaver-Controller_Cabinet Mode 8 - Gun Locker - No
+      Rear Door [440339]
+    6400076: Locker-Evidence-Spacesaver-Controller_Cabinet Mode 8 - Gun Locker - No
+      Rear Door [440460]
+    6400078: Locker-Evidence-Spacesaver-ED3D01 ED3D01 [442050]
+    6400080: Locker-Evidence-Spacesaver-ED3D01 ED3D01 [442389]
+    6400082: Locker-Evidence-Spacesaver-ED3D01 ED3D01 [442724]
+    6400084: Locker-Evidence-Spacesaver-ED3D02 ED3D02 [441205]
+    6400086: Locker-Evidence-Spacesaver-ED3D02 ED3D02 [441660]
+    6400088: Locker-Evidence-Spacesaver-ED3D03 ED3D03 [437462]
+    6400090: Locker-Evidence-Spacesaver-ED3D04 ED3D04 [442311]
+    6400092: Locker-Evidence-Spacesaver-ED3D04 ED3D04 [442725]
+    6400094: Locker-Evidence-Spacesaver-ED3D06 ED3D06 [442346]
+    6400096: Locker-Evidence-Spacesaver-ED3D07 ED3D07 [437606]
+    6400098: Locker-Evidence-Spacesaver-ED3D07 ED3D07 [440119]
+    6400100: Locker-Evidence-Spacesaver-ED3D08 ED3D08 [440022]
+    6400102: Locker-Evidence-Spacesaver-ED3D08 ED3D08 [442637]
+    6400104: Locker-Evidence-Spacesaver-ED3D09 ED3D09 [437858]
+    6400106: Locker-Evidence-Spacesaver-ED3D09 ED3D09 [440216]
+    6400108: Locker-Evidence-Spacesaver-ED3D12 ED3D12 [439933]
+    6400110: Locker-Evidence-Spacesaver-ED3D14 ED3D14 [439860]
+    6400112: Locker-Evidence-Spacesaver-ED3D14 ED3D14 [442682]
+    6400114: Locker-Evidence-Spacesaver-ED3D14 ED3D14 [442701]
+    6400116: Locker-Evidence-Spacesaver-ED3D15 ED3D15 [439257]
+    6400118: Locker-Evidence-Spacesaver-ED3D15 ED3D15 [442726]
+    6400120: Locker-Evidence-Spacesaver-ED3D16 ED3D16 [439647]
+    6400122: Locker-Evidence-Spacesaver-ED3D16 ED3D16 [442727]
+    6400124: Locker-Evidence-Spacesaver-ED3D17 ED3D17 [437031]
+    6400126: Locker-Evidence-Spacesaver-ED3D17 ED3D17 [442753]
+    6400128: Non-Monolithic Landing Non-Monolithic Landing [329589]
+    6400130: Non-Monolithic Run 2" Tread 1" Nosing 1/4" Riser [329486]
+    6400132: Non-Monolithic Run 2" Tread 1" Nosing 1/4" Riser [329587]
+    6400134: Railing Handrail - Rectangular [329611]_[329319]
+    6400136: Railing Handrail - Rectangular [329611]_[329323]
+    6400138: Railing Handrail - Rectangular [329611]_[329323] 1
+    6400140: Railing Handrail - Rectangular [329611]_[329323] 2
+    6400142: Railing Handrail - Rectangular [329611]_[329323] 3
+    6400144: Railing Handrail - Rectangular [329611]_[329323] 4
+    6400146: Railing Handrail - Rectangular [329611]_[329323] 5
+    6400148: Railing Handrail - Rectangular [329611]_[329327]
+    6400150: Railing Handrail - Rectangular [329611]_[329327] 1
+    6400152: Railing Handrail - Rectangular [329611]_[329327] 10
+    6400154: Railing Handrail - Rectangular [329611]_[329327] 2
+    6400156: Railing Handrail - Rectangular [329611]_[329327] 3
+    6400158: Railing Handrail - Rectangular [329611]_[329327] 4
+    6400160: Railing Handrail - Rectangular [329611]_[329327] 5
+    6400162: Railing Handrail - Rectangular [329611]_[329327] 6
+    6400164: Railing Handrail - Rectangular [329611]_[329327] 7
+    6400166: Railing Handrail - Rectangular [329611]_[329327] 8
+    6400168: Railing Handrail - Rectangular [329611]_[329327] 9
+    6400170: Railing Handrail - Rectangular [329611]_[329329]
+    6400172: Railing Handrail - Rectangular [329611]_[329329] 1
+    6400174: Railing Handrail - Rectangular [329611]_[329329] 2
+    6400176: Railing Handrail - Rectangular [329611]_[329329] 3
+    6400178: Railing Handrail - Rectangular [329611]_[329329] 4
+    6400180: Railing Handrail - Rectangular [329611]_[329329] 5
+    6400182: Railing Handrail - Rectangular [329611]_[329329] 6
+    6400184: Railing Handrail - Rectangular [329611]_[329331]
+    6400186: Railing Handrail - Rectangular [329611]_[329331] 1
+    6400188: Railing Handrail - Rectangular [329611]_[329331] 2
+    6400190: Railing Handrail - Rectangular [329611]_[329331] 3
+    6400192: Railing Handrail - Rectangular [329611]_[329331] 4
+    6400194: Railing Handrail - Rectangular [329611]_[329331] 5
+    6400196: Railing Handrail - Rectangular [329611]_[329331] 6
+    6400198: Railing Handrail - Rectangular [329611]_[329333]
+    6400200: Railing Handrail - Rectangular [329611]_[329333] 1
+    6400202: Railing Handrail - Rectangular [329611]_[329333] 2
+    6400204: Railing Handrail - Rectangular [329611]_[329333] 3
+    6400206: Railing Handrail - Rectangular [329611]_[329333] 4
+    6400208: Railing Handrail - Rectangular [329611]_[329333] 5
+    6400210: Railing Handrail - Rectangular [329611]_[329333] 6
+    6400212: Railing Handrail - Rectangular [329611]_[329335]
+    6400214: Railing Handrail - Rectangular [329611]_[329335] 1
+    6400216: Railing Handrail - Rectangular [329611]_[329335] 2
+    6400218: Railing Handrail - Rectangular [329611]_[329335] 3
+    6400220: Railing Handrail - Rectangular [329611]_[329335] 4
+    6400222: Railing Handrail - Rectangular [329611]_[329335] 5
+    6400224: Railing Handrail - Rectangular [329611]_[329335] 6
+    6400226: Railing Handrail - Rectangular [329611]_[329337]
+    6400228: Railing Handrail - Rectangular [329611]_[329337] 1
+    6400230: Railing Handrail - Rectangular [329611]_[329337] 2
+    6400232: Railing Handrail - Rectangular [329611]_[329337] 3
+    6400234: Railing Handrail - Rectangular [329611]_[329337] 4
+    6400236: Railing Handrail - Rectangular [329611]_[329337] 5
+    6400238: Railing Handrail - Rectangular [329611]_[329337] 6
+    6400240: Railing Handrail - Rectangular [329611]_[329339]
+    6400242: Railing Handrail - Rectangular [329611]_[329339] 1
+    6400244: Railing Handrail - Rectangular [329611]_[329339] 2
+    6400246: Railing Handrail - Rectangular [329611]_[329339] 3
+    6400248: Railing Handrail - Rectangular [329611]_[329339] 4
+    6400250: Railing Handrail - Rectangular [329611]_[329339] 5
+    6400252: Railing Handrail - Rectangular [329611]_[329341]
+    6400254: Railing Handrail - Rectangular [329611]_[329341] 1
+    6400256: Railing Handrail - Rectangular [329611]_[329341] 2
+    6400258: Railing Handrail - Rectangular [329611]_[329341] 3
+    6400260: Railing Handrail - Rectangular [329611]_[329341] 4
+    6400262: Railing Handrail - Rectangular [329611]_[329341] 5
+    6400264: Railing Handrail - Rectangular [329611]_[329343]
+    6400266: Railing Handrail - Rectangular [329611]_[329343] 1
+    6400268: Railing Handrail - Rectangular [329611]_[329343] 2
+    6400270: Railing Handrail - Rectangular [329611]_[329343] 3
+    6400272: Railing Handrail - Rectangular [329611]_[329343] 4
+    6400274: Railing Handrail - Rectangular [329611]_[329343] 5
+    6400276: Railing Handrail - Rectangular [329611]_[329345]
+    6400278: Railing Handrail - Rectangular [329611]_[329345] 1
+    6400280: Railing Handrail - Rectangular [329611]_[329345] 2
+    6400282: Railing Handrail - Rectangular [329611]_[329345] 3
+    6400284: Railing Handrail - Rectangular [329611]_[329345] 4
+    6400286: Railing Handrail - Rectangular [329611]_[329347]
+    6400288: Railing Handrail - Rectangular [329611]_[329347] 1
+    6400290: Railing Handrail - Rectangular [329611]_[329347] 2
+    6400292: Railing Handrail - Rectangular [329611]_[329347] 3
+    6400294: Railing Handrail - Rectangular [329611]_[329347] 4
+    6400296: Railing Handrail - Rectangular [329611]_[329624]
+    6400298: Railing Handrail - Rectangular [329615]_[329319]
+    6400300: Railing Handrail - Rectangular [329615]_[329323]
+    6400302: Railing Handrail - Rectangular [329615]_[329323] 1
+    6400304: Railing Handrail - Rectangular [329615]_[329323] 2
+    6400306: Railing Handrail - Rectangular [329615]_[329323] 3
+    6400308: Railing Handrail - Rectangular [329615]_[329323] 4
+    6400310: Railing Handrail - Rectangular [329615]_[329323] 5
+    6400312: Railing Handrail - Rectangular [329615]_[329327]
+    6400314: Railing Handrail - Rectangular [329615]_[329327] 1
+    6400316: Railing Handrail - Rectangular [329615]_[329327] 10
+    6400318: Railing Handrail - Rectangular [329615]_[329327] 2
+    6400320: Railing Handrail - Rectangular [329615]_[329327] 3
+    6400322: Railing Handrail - Rectangular [329615]_[329327] 4
+    6400324: Railing Handrail - Rectangular [329615]_[329327] 5
+    6400326: Railing Handrail - Rectangular [329615]_[329327] 6
+    6400328: Railing Handrail - Rectangular [329615]_[329327] 7
+    6400330: Railing Handrail - Rectangular [329615]_[329327] 8
+    6400332: Railing Handrail - Rectangular [329615]_[329327] 9
+    6400334: Railing Handrail - Rectangular [329615]_[329329]
+    6400336: Railing Handrail - Rectangular [329615]_[329329] 1
+    6400338: Railing Handrail - Rectangular [329615]_[329329] 2
+    6400340: Railing Handrail - Rectangular [329615]_[329329] 3
+    6400342: Railing Handrail - Rectangular [329615]_[329329] 4
+    6400344: Railing Handrail - Rectangular [329615]_[329329] 5
+    6400346: Railing Handrail - Rectangular [329615]_[329329] 6
+    6400348: Railing Handrail - Rectangular [329615]_[329331]
+    6400350: Railing Handrail - Rectangular [329615]_[329331] 1
+    6400352: Railing Handrail - Rectangular [329615]_[329331] 2
+    6400354: Railing Handrail - Rectangular [329615]_[329331] 3
+    6400356: Railing Handrail - Rectangular [329615]_[329331] 4
+    6400358: Railing Handrail - Rectangular [329615]_[329331] 5
+    6400360: Railing Handrail - Rectangular [329615]_[329331] 6
+    6400362: Railing Handrail - Rectangular [329615]_[329333]
+    6400364: Railing Handrail - Rectangular [329615]_[329333] 1
+    6400366: Railing Handrail - Rectangular [329615]_[329333] 2
+    6400368: Railing Handrail - Rectangular [329615]_[329333] 3
+    6400370: Railing Handrail - Rectangular [329615]_[329333] 4
+    6400372: Railing Handrail - Rectangular [329615]_[329333] 5
+    6400374: Railing Handrail - Rectangular [329615]_[329333] 6
+    6400376: Railing Handrail - Rectangular [329615]_[329335]
+    6400378: Railing Handrail - Rectangular [329615]_[329335] 1
+    6400380: Railing Handrail - Rectangular [329615]_[329335] 2
+    6400382: Railing Handrail - Rectangular [329615]_[329335] 3
+    6400384: Railing Handrail - Rectangular [329615]_[329335] 4
+    6400386: Railing Handrail - Rectangular [329615]_[329335] 5
+    6400388: Railing Handrail - Rectangular [329615]_[329335] 6
+    6400390: Railing Handrail - Rectangular [329615]_[329337]
+    6400392: Railing Handrail - Rectangular [329615]_[329337] 1
+    6400394: Railing Handrail - Rectangular [329615]_[329337] 2
+    6400396: Railing Handrail - Rectangular [329615]_[329337] 3
+    6400398: Railing Handrail - Rectangular [329615]_[329337] 4
+    6400400: Railing Handrail - Rectangular [329615]_[329337] 5
+    6400402: Railing Handrail - Rectangular [329615]_[329337] 6
+    6400404: Railing Handrail - Rectangular [329615]_[329339]
+    6400406: Railing Handrail - Rectangular [329615]_[329339] 1
+    6400408: Railing Handrail - Rectangular [329615]_[329339] 2
+    6400410: Railing Handrail - Rectangular [329615]_[329339] 3
+    6400412: Railing Handrail - Rectangular [329615]_[329339] 4
+    6400414: Railing Handrail - Rectangular [329615]_[329339] 5
+    6400416: Railing Handrail - Rectangular [329615]_[329341]
+    6400418: Railing Handrail - Rectangular [329615]_[329341] 1
+    6400420: Railing Handrail - Rectangular [329615]_[329341] 2
+    6400422: Railing Handrail - Rectangular [329615]_[329341] 3
+    6400424: Railing Handrail - Rectangular [329615]_[329341] 4
+    6400426: Railing Handrail - Rectangular [329615]_[329341] 5
+    6400428: Railing Handrail - Rectangular [329615]_[329343]
+    6400430: Railing Handrail - Rectangular [329615]_[329343] 1
+    6400432: Railing Handrail - Rectangular [329615]_[329343] 2
+    6400434: Railing Handrail - Rectangular [329615]_[329343] 3
+    6400436: Railing Handrail - Rectangular [329615]_[329343] 4
+    6400438: Railing Handrail - Rectangular [329615]_[329343] 5
+    6400440: Railing Handrail - Rectangular [329615]_[329345]
+    6400442: Railing Handrail - Rectangular [329615]_[329345] 1
+    6400444: Railing Handrail - Rectangular [329615]_[329345] 2
+    6400446: Railing Handrail - Rectangular [329615]_[329345] 3
+    6400448: Railing Handrail - Rectangular [329615]_[329345] 4
+    6400450: Railing Handrail - Rectangular [329615]_[329347]
+    6400452: Railing Handrail - Rectangular [329615]_[329347] 1
+    6400454: Railing Handrail - Rectangular [329615]_[329347] 2
+    6400456: Railing Handrail - Rectangular [329615]_[329347] 3
+    6400458: Railing Handrail - Rectangular [329615]_[329347] 4
+    6400460: Railing Handrail - Rectangular [329615]_[329624]
+    6400462: Rectangular Mullion 2.5" x 5" rectangular [325859]
+    6400464: Rectangular Mullion 2.5" x 5" rectangular [325860]
+    6400466: Rectangular Mullion 2.5" x 5" rectangular [325861]
+    6400468: Rectangular Mullion 2.5" x 5" rectangular [325862]
+    6400470: Rectangular Mullion 2.5" x 5" rectangular [325863]
+    6400472: Rectangular Mullion 2.5" x 5" rectangular [325864]
+    6400474: Rectangular Mullion 2.5" x 5" rectangular [325865]
+    6400476: Rectangular Mullion 2.5" x 5" rectangular [325866]
+    6400478: Rectangular Mullion 2.5" x 5" rectangular [325868]
+    6400480: Rectangular Mullion 2.5" x 5" rectangular [325869]
+    6400482: Rectangular Mullion 2.5" x 5" rectangular [325871]
+    6400484: Rectangular Mullion 2.5" x 5" rectangular [325872]
+    6400486: Rectangular Mullion 2.5" x 5" rectangular [325873]
+    6400488: Rectangular Mullion 2.5" x 5" rectangular [325874]
+    6400490: Rectangular Mullion 2.5" x 5" rectangular [325875]
+    6400492: Rectangular Mullion 2.5" x 5" rectangular [325876]
+    6400494: Rectangular Mullion 2.5" x 5" rectangular [325883]
+    6400496: Rectangular Mullion 2.5" x 5" rectangular [325884]
+    6400498: Rectangular Mullion 2.5" x 5" rectangular [325885]
+    6400500: Rectangular Mullion 2.5" x 5" rectangular [325886]
+    6400502: Rectangular Mullion 2.5" x 5" rectangular [325887]
+    6400504: Rectangular Mullion 2.5" x 5" rectangular [325888]
+    6400506: Rectangular Mullion 2.5" x 5" rectangular [325889]
+    6400508: Rectangular Mullion 2.5" x 5" rectangular [325890]
+    6400510: Rectangular Mullion 2.5" x 5" rectangular [325891]
+    6400512: Rectangular Mullion 2.5" x 5" rectangular [325892]
+    6400514: Rectangular Mullion 2.5" x 5" rectangular [443160]
+    6400516: Rectangular Mullion 2.5" x 5" rectangular [443161]
+    6400518: Rectangular Mullion 2.5" x 5" rectangular [443162]
+    6400520: Rectangular Mullion 2.5" x 5" rectangular [443163]
+    6400522: Rectangular Mullion 2.5" x 5" rectangular [443164]
+    6400524: Rectangular Mullion 2.5" x 5" rectangular [443165]
+    6400526: Single-Flush 36" x 84" [327387]
+    6400528: Single-Flush 36" x 84" [438848]
+    6400530: Stringer Stringer - 2" Width [329488]
+    6400532: Stringer Stringer - 2" Width [329489]
+    6400534: Stringer Stringer - 2" Width [329591]
+    6400536: Stringer Stringer - 2" Width [329592]
+    6400538: Stringer Stringer - 2" Width [329593]
+    6400540: Stringer Stringer - 2" Width [329594]
+    6400542: System Panel Glazed [325825]
+    6400544: System Panel Glazed [325828]
+    6400546: System Panel Glazed [325830]
+    6400548: System Panel Glazed [325832]
+    6400550: System Panel Glazed [325834]
+    6400552: System Panel Glazed [325836]
+    6400554: System Panel Glazed [325838]
+    6400556: System Panel Glazed [325839]
+    6400558: System Panel Glazed [325840]
+    6400560: System Panel Glazed [325841]
+    6400562: System Panel Glazed [325842]
+    6400564: System Panel Glazed [325843]
+    6400566: Top Rail Type Rectangular - 2" x 2" [329654]
+    6400568: Top Rail Type Rectangular - 2" x 2" [329667]
   materials:
     importMaterials: 1
     materialName: 0
@@ -1301,7 +1593,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
