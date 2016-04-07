@@ -125,6 +125,28 @@ ModelImporter:
     4300038: R_back
     4300040: R_front_2
     4300042: L_front_2
+    6400000: base
+    6400002: L_back
+    6400004: L_back_2
+    6400006: L_DOOR
+    6400008: L_door
+    6400010: L_front
+    6400012: L_front_2
+    6400014: pickup_1
+    6400016: R_Back
+    6400018: R_back
+    6400020: R_DOOR
+    6400022: R_Door
+    6400024: R_front
+    6400026: R_front_2
+    6400028: steer
+    6400030: steer_2
+    6400032: window
+    6400034: window_2
+    6400036: window_3
+    6400038: window_4
+    6400040: window_5
+    6400042: windows
   materials:
     importMaterials: 1
     materialName: 0
@@ -134,6 +156,10 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
@@ -146,7 +172,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
