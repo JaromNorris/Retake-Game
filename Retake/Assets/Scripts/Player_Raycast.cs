@@ -86,7 +86,6 @@ public class Player_Raycast : MonoBehaviour
 			rightText.text = "";
 			leftText.text = "";
 			if(lookingAt != null){
-				Debug.Log ("looked away");
 				lookingAt.GetComponent<ParticleSystem>().Stop();
 				lookingAt = null;
 			}
@@ -97,7 +96,6 @@ public class Player_Raycast : MonoBehaviour
         // Places an object from inventory if able
         if (Input.GetMouseButtonDown(0) && Physics.Raycast(this.transform.position, this.transform.forward, out hitObj, viewDistance))
         {
-            Debug.Log("Selected " + hitObj.collider.name);
 
             if (hitObj.collider.tag == "Plantable")
             {
