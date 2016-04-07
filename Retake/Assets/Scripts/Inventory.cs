@@ -20,12 +20,13 @@ public class Inventory : MonoBehaviour
         {
             _currentIndex = value;
             currentItem = inventory[_currentIndex];
+            selectionIndicator.transform.position = hotbarPanels[_currentIndex].transform.position;
         }
     }
 
     public GameObject hotbarUI;
     public GameObject inventoryUI;
-    public Sprite selectionIndicator;
+    public GameObject selectionIndicator;
 
     int nextInventory;
     Transform[] hotbarContainers;
@@ -59,18 +60,19 @@ public class Inventory : MonoBehaviour
                 inventoryPanels[j + 10 * i] = inventoryContainers[j + 10*i].GetChild(0).gameObject.GetComponent<Image>();
                 inventoryPanels[j + 10 * i].gameObject.GetComponent<CanvasGroup>().alpha = 0;
         }
+
+        currentIndex = 0;
     }
 
     private void UpdateHotbar(InventoryEntry[] hotbar, InventoryEntry[] inventory)
     {
-        int counter = 0;
-        for (int i = 0; i < inventorySize && counter < hotbarSize; i++)
+        for (int i = 0; i < hotbarSize; i++)
             if (inventory[i] != null)
             {
-                hotbar[counter] = inventory[i];
-                hotbarPanels[counter].sprite = hotbar[counter].sprite;
-                hotbarPanels[counter].gameObject.GetComponent<CanvasGroup>().alpha = 1;
-                counter++;
+                hotbar[i] = inventory[i];
+                hotbarPanels[i].sprite = hotbar[i].sprite;
+                hotbarPanels[i].gameObject.GetComponent<CanvasGroup>().alpha = inventoryPanels[i].gameObject.GetComponent<CanvasGroup>().alpha;
+                i++;
             }
         currentItem = inventory[currentIndex];
     }
@@ -125,10 +127,10 @@ public class Inventory : MonoBehaviour
 
         // create game object from InventoryEntry
         GameObject plantableObject = (GameObject)Instantiate(Resources.Load(o.prefabName));
-        Debug.Log("Removing");
         inventory[index].count--;
         if (inventory[index].count == 0)
         {
+            Debug.Log("Removing");
             inventory[index] = null;
             inventoryPanels[index].gameObject.GetComponent<CanvasGroup>().alpha = 0;
         }
