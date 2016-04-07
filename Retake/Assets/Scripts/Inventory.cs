@@ -27,6 +27,8 @@ public class Inventory : MonoBehaviour
     public GameObject inventoryUI;
 
     int nextInventory;
+    Transform[] hotbarContainers;
+    Transform[] inventoryContainers;
     Image[] hotbarPanels;
     Image[] inventoryPanels;
 
@@ -38,24 +40,26 @@ public class Inventory : MonoBehaviour
         hotbar = new InventoryEntry[hotbarSize];
 
         Transform hotbarPanelTransform = hotbarUI.transform.Find("HotbarPanels");
+        hotbarContainers = new Transform[hotbarPanelTransform.childCount];
         hotbarPanels = new Image[hotbarPanelTransform.childCount];
-        for (int i = 0; i < hotbarPanels.Length; i++)
+        for (int i = 0; i < hotbarContainers.Length; i++)
         {
-            hotbarPanels[i] = hotbarPanelTransform.GetChild(i).gameObject.GetComponent<Image>();
-            hotbarPanels[i].gameObject.SetActive(false);
+            hotbarContainers[i] = hotbarPanelTransform.GetChild(i);
+            hotbarPanels[i] = hotbarContainers[i].transform.GetChild(0).gameObject.GetComponent<Image>();
+            hotbarContainers[i].GetChild(0).gameObject.SetActive(false);
+            hotbarContainers[i].gameObject.SetActive(true);
         }
 
         Transform inventoryPanelTransform = inventoryUI.transform.Find("InventoryPanels");
-        Transform[] rowTransforms = new Transform[inventoryPanelTransform.childCount];
+        inventoryContainers = new Transform[50];
         inventoryPanels = new Image[50];
         for (int i = 0; i < 5; i++ )
             for (int j = 0; j < 10; j++) {
-                inventoryPanels[j + 10 * i] = inventoryPanelTransform.GetChild(i).GetChild(j).gameObject.GetComponent<Image>();
-                inventoryPanels[j + 10*i].gameObject.SetActive(false);
+                inventoryContainers[j + 10 * i] = inventoryPanelTransform.GetChild(i).GetChild(j);
+                inventoryPanels[j + 10 * i] = inventoryContainers[j + 10*i].GetChild(0).gameObject.GetComponent<Image>();
+                inventoryContainers[j + 10*i].GetChild(0).gameObject.SetActive(false);
+                inventoryContainers[j + 10 * i].gameObject.SetActive(true);
         }
-
-        inventoryUI.SetActive(false);
-        
     }
 
     private void UpdateHotbar(InventoryEntry[] hotbar, InventoryEntry[] inventory)
@@ -65,7 +69,7 @@ public class Inventory : MonoBehaviour
             if (inventory[i] != null)
             {
                 hotbar[counter] = inventory[i];
-                hotbarPanels[counter].gameObject.SetActive(inventoryPanels[i].gameObject.activeSelf);
+                hotbarContainers[counter].GetChild(0).gameObject.SetActive(true);
                 hotbarPanels[counter].sprite = inventoryPanels[i].sprite;
                 counter++;
             }
@@ -95,9 +99,10 @@ public class Inventory : MonoBehaviour
         if (nextInventory == inventory.Length)
             return;
         // if nothing else, add it to the inventory at the first available spot
+        Debug.Log("You did it");
         inventory[nextInventory] = ie;
-        inventoryPanels[nextInventory].gameObject.SetActive(true);
-        inventoryPanels[nextInventory].sprite = ie.sprite;
+        inventoryContainers[nextInventory].GetChild(0).gameObject.SetActive(true);
+        inventoryContainers[nextInventory].GetChild(0).gameObject.GetComponent<Image>().sprite = ie.sprite;
         // increment the indicator for the next open spot until it finds one
         //   or reaches the end of the inventory
         do
@@ -127,7 +132,7 @@ public class Inventory : MonoBehaviour
         if (inventory[index].count == 0)
         {
             inventory[index] = null;
-            inventoryPanels[index].gameObject.SetActive(false);
+            inventoryContainers[index].GetChild(0).gameObject.SetActive(false);
         }
         if (index < nextInventory)
             nextInventory = index;

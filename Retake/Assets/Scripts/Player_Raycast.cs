@@ -43,6 +43,9 @@ public class Player_Raycast : MonoBehaviour
 
 		rightText = GameObject.Find ("RightClick").GetComponent<Text>();
 		leftText = GameObject.Find ("LeftClick").GetComponent<Text>();
+
+        GameObject inventoryUI = UICanvas.transform.Find("InventoryUI").gameObject;
+        inventoryUI.GetComponent<CanvasGroup>().alpha = 0;
     }
 
     // Update is called once per frame
@@ -85,7 +88,7 @@ public class Player_Raycast : MonoBehaviour
 		{
 			rightText.text = "";
 			leftText.text = "";
-			if(lookingAt != null){
+			if(lookingAt != null) {
 				Debug.Log ("looked away");
 				lookingAt.GetComponent<ParticleSystem>().Stop();
 				lookingAt = null;
@@ -215,11 +218,11 @@ public class Player_Raycast : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.Tab))
         {
-            GameObject inventory = UICanvas.transform.Find("InventoryUI").gameObject;
-            if (!inventory.activeSelf)
-                inventory.SetActive(true);
+            CanvasGroup inventoryCanvasGroup = UICanvas.transform.Find("InventoryUI").gameObject.GetComponent<CanvasGroup>();
+            if (inventoryCanvasGroup.alpha == 1)
+                inventoryCanvasGroup.alpha = 0;
             else
-                inventory.SetActive(false);
+                inventoryCanvasGroup.alpha = 1;
 
         }
 
