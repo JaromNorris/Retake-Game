@@ -3,7 +3,13 @@ guid: 49b028275ac99c948b5118e7a72ef078
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: Mesh
+    6400000: //RootNode
+    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 3
@@ -29,7 +35,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: .00999999978
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
