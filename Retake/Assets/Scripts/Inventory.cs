@@ -25,6 +25,7 @@ public class Inventory : MonoBehaviour
 
     public GameObject hotbarUI;
     public GameObject inventoryUI;
+    public Sprite selectionIndicator;
 
     int nextInventory;
     Transform[] hotbarContainers;
@@ -46,8 +47,7 @@ public class Inventory : MonoBehaviour
         {
             hotbarContainers[i] = hotbarPanelTransform.GetChild(i);
             hotbarPanels[i] = hotbarContainers[i].transform.GetChild(0).gameObject.GetComponent<Image>();
-            hotbarContainers[i].GetChild(0).gameObject.SetActive(false);
-            hotbarContainers[i].gameObject.SetActive(true);
+            hotbarPanels[i].gameObject.GetComponent<CanvasGroup>().alpha = 0;
         }
 
         Transform inventoryPanelTransform = inventoryUI.transform.Find("InventoryPanels");
@@ -57,8 +57,7 @@ public class Inventory : MonoBehaviour
             for (int j = 0; j < 10; j++) {
                 inventoryContainers[j + 10 * i] = inventoryPanelTransform.GetChild(i).GetChild(j);
                 inventoryPanels[j + 10 * i] = inventoryContainers[j + 10*i].GetChild(0).gameObject.GetComponent<Image>();
-                inventoryContainers[j + 10*i].GetChild(0).gameObject.SetActive(false);
-                inventoryContainers[j + 10 * i].gameObject.SetActive(true);
+                inventoryPanels[j + 10 * i].gameObject.GetComponent<CanvasGroup>().alpha = 0;
         }
     }
 
@@ -69,8 +68,8 @@ public class Inventory : MonoBehaviour
             if (inventory[i] != null)
             {
                 hotbar[counter] = inventory[i];
-                hotbarContainers[counter].GetChild(0).gameObject.SetActive(true);
-                hotbarPanels[counter].sprite = inventoryPanels[i].sprite;
+                hotbarPanels[counter].sprite = hotbar[counter].sprite;
+                hotbarPanels[counter].gameObject.GetComponent<CanvasGroup>().alpha = 1;
                 counter++;
             }
         currentItem = inventory[currentIndex];
@@ -99,9 +98,8 @@ public class Inventory : MonoBehaviour
         if (nextInventory == inventory.Length)
             return;
         // if nothing else, add it to the inventory at the first available spot
-        Debug.Log("You did it");
         inventory[nextInventory] = ie;
-        inventoryContainers[nextInventory].GetChild(0).gameObject.SetActive(true);
+        inventoryPanels[nextInventory].gameObject.GetComponent<CanvasGroup>().alpha = 1;
         inventoryContainers[nextInventory].GetChild(0).gameObject.GetComponent<Image>().sprite = ie.sprite;
         // increment the indicator for the next open spot until it finds one
         //   or reaches the end of the inventory
@@ -132,7 +130,7 @@ public class Inventory : MonoBehaviour
         if (inventory[index].count == 0)
         {
             inventory[index] = null;
-            inventoryContainers[index].GetChild(0).gameObject.SetActive(false);
+            inventoryPanels[index].gameObject.GetComponent<CanvasGroup>().alpha = 0;
         }
         if (index < nextInventory)
             nextInventory = index;
