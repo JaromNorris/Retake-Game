@@ -5,6 +5,7 @@ public abstract class PlantableObject : MonoBehaviour
 {
     public string prefabName;
     public string species;
+    public Sprite sprite;
     public int currentSize;
     public int maxSize;
     public int lightRequired;

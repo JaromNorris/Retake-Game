@@ -7957,6 +7957,7 @@ GameObject:
   - 95: {fileID: 9564980}
   - 114: {fileID: 11488998}
   - 23: {fileID: 2368996}
+  - 64: {fileID: 6413294}
   m_Layer: 0
   m_Name: beanstalk
   m_TagString: Plant
@@ -17347,6 +17348,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139044}
   m_Mesh: {fileID: 4300000, guid: aad595beb63b28146991751bbb7cdf8b, type: 3}
+--- !u!64 &6413294
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 0}
 --- !u!95 &9564980
 Animator:
   serializedVersion: 3
@@ -17377,6 +17390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabName: beanstalk
   species: Beanstalk
+  sprite: {fileID: 21300000, guid: 29595f875e4e8de40ad444bd2e72f6fa, type: 3}
   currentSize: 1
   maxSize: 1
   lightRequired: 0
@@ -17432,6 +17446,11 @@ Prefab:
       propertyPath: waterRequired
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 29595f875e4e8de40ad444bd2e72f6fa,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 187298}

@@ -9,6 +9,7 @@ public class InventoryEntry : ScriptableObject
     public int maxSize;
     public int count = 0;
     public string type;
+    public Sprite sprite;
 
     public void SetInventoryEntry(PlantableObject _obj)
     {
@@ -18,6 +19,7 @@ public class InventoryEntry : ScriptableObject
         maxSize = _obj.maxSize;
         type = _obj.Type;
         count = 1;
+        sprite = _obj.sprite;
     }
 
     public void SetInventoryEntry(New_Seed _seed)
@@ -26,5 +28,6 @@ public class InventoryEntry : ScriptableObject
 		species = prefabName;
         count = _seed.number_of;
 		type = "seed";
+        sprite = _seed.sprite;
     }
 }

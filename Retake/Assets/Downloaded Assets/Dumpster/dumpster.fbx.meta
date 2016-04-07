@@ -3,7 +3,16 @@ guid: 7f059b5b66400b24699fe978938f5276
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
+    100000: //RootNode
+    100002: dumpster_001
+    400000: //RootNode
+    400002: dumpster_001
+    2300000: dumpster_001
+    3300000: dumpster_001
     4300000: dumpster_001
+    6400000: dumpster_001
+    7400000: Default Take
+    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 3
@@ -29,7 +38,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: .00999999978
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 1

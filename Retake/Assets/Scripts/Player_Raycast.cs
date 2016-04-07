@@ -43,6 +43,9 @@ public class Player_Raycast : MonoBehaviour
 
 		rightText = GameObject.Find ("RightClick").GetComponent<Text>();
 		leftText = GameObject.Find ("LeftClick").GetComponent<Text>();
+
+        GameObject inventoryUI = UICanvas.transform.Find("InventoryUI").gameObject;
+        inventoryUI.GetComponent<CanvasGroup>().alpha = 0;
     }
 
     // Update is called once per frame
@@ -85,7 +88,7 @@ public class Player_Raycast : MonoBehaviour
 		{
 			rightText.text = "";
 			leftText.text = "";
-			if(lookingAt != null){
+			if(lookingAt != null) {
 				lookingAt.GetComponent<ParticleSystem>().Stop();
 				lookingAt = null;
 			}
@@ -209,6 +212,16 @@ public class Player_Raycast : MonoBehaviour
                 if (plantSpace.pollutionPresent > 0)
                     plantSpace.pollutionPresent -= truePollutionRate;
             }
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            CanvasGroup inventoryCanvasGroup = UICanvas.transform.Find("InventoryUI").gameObject.GetComponent<CanvasGroup>();
+            if (inventoryCanvasGroup.alpha == 1)
+                inventoryCanvasGroup.alpha = 0;
+            else
+                inventoryCanvasGroup.alpha = 1;
+
         }
 
 		/*

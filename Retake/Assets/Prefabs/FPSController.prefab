@@ -1,20 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &106514
+--- !u!1 &104570
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 435092}
-  - 20: {fileID: 2087800}
-  - 81: {fileID: 8164384}
-  - 114: {fileID: 11409302}
-  - 114: {fileID: 11416638}
+  - 4: {fileID: 499278}
+  - 143: {fileID: 14368388}
+  - 114: {fileID: 11419780}
+  - 54: {fileID: 5416822}
+  - 82: {fileID: 8242854}
   m_Layer: 2
-  m_Name: FirstPersonCharacter
-  m_TagString: MainCamera
+  m_Name: FPSController
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,13 +27,13 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 433998}
-  - 143: {fileID: 14319492}
-  - 114: {fileID: 11475320}
-  - 54: {fileID: 5492926}
-  - 82: {fileID: 8210338}
+  - 20: {fileID: 2079960}
+  - 81: {fileID: 8196858}
+  - 114: {fileID: 11490232}
+  - 114: {fileID: 11433204}
   m_Layer: 2
-  m_Name: FPSController
-  m_TagString: Untagged
+  m_Name: FirstPersonCharacter
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,25 +61,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128208}
-  m_LocalRotation: {x: 8.50915427e-08, y: .66414094, z: -2.2621367e-09, w: .74760741}
-  m_LocalPosition: {x: -56.0999985, y: -20.6299992, z: 239}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 435092}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
---- !u!4 &435092
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 106514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: .800000012, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 456530}
-  m_Father: {fileID: 433998}
+  m_Father: {fileID: 499278}
   m_RootOrder: 0
 --- !u!4 &456530
 Transform:
@@ -91,14 +78,27 @@ Transform:
   m_LocalPosition: {x: .592000008, y: -.0269997716, z: .363999844}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 435092}
+  m_Father: {fileID: 433998}
   m_RootOrder: 0
---- !u!20 &2087800
+--- !u!4 &499278
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104570}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.18839407, y: 20.1000004, z: -80.0036011}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 433998}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!20 &2079960
 Camera:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 106514}
+  m_GameObject: {fileID: 128208}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -127,12 +127,12 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
   m_StereoMirrorMode: 0
---- !u!54 &5492926
+--- !u!54 &5416822
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128208}
+  m_GameObject: {fileID: 104570}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -142,19 +142,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!81 &8164384
+--- !u!81 &8196858
 AudioListener:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 106514}
+  m_GameObject: {fileID: 128208}
   m_Enabled: 1
---- !u!82 &8210338
+--- !u!82 &8242854
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128208}
+  m_GameObject: {fileID: 104570}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -218,70 +218,12 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &11409302
+--- !u!114 &11419780
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 106514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 492401b3e8135ac46b7d610ddf8f7ef5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viewDistance: 3
-  wateringRate: 10
-  pollutionRate: 10
-  CanvasText: {fileID: 0}
-  waterMask: {fileID: 0}
-  TestSeed: {fileID: 135582, guid: 3c08c3f502f2bb546b6780bad344510a, type: 2}
-  TestPlant: {fileID: 184624, guid: f3ca85a8358c1ca4ebe3cf3d726aae82, type: 2}
-  maxWater: 100
-  minWater: 0
-  currentWater: 100
-  plantPrefabs: []
---- !u!114 &11416638
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 106514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccbf763102eda0241a8bd30e92757cee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventorySize: 20
-  inventory:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  hotbarSize: 5
-  hotbar: []
-  currentItem: {fileID: 0}
---- !u!114 &11475320
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128208}
+  m_GameObject: {fileID: 104570}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05ec5cf00ca181d45a42ba1870e148c3, type: 3}
@@ -289,8 +231,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canClimb: 0
   m_IsWalking: 0
-  m_WalkSpeed: 10
-  m_RunSpeed: 40
+  m_WalkSpeed: 5
+  m_RunSpeed: 10
   m_ClimbSpeed: 0
   m_RunstepLenghten: .699999988
   m_JumpSpeed: 10
@@ -370,18 +312,78 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
---- !u!143 &14319492
-CharacterController:
+--- !u!114 &11433204
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbf763102eda0241a8bd30e92757cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventorySize: 20
+  inventory:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  hotbarSize: 5
+  hotbar: []
+  currentItem: {fileID: 0}
+  hotbarUI: {fileID: 0}
+  inventoryUI: {fileID: 0}
+--- !u!114 &11490232
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492401b3e8135ac46b7d610ddf8f7ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewDistance: 3
+  wateringRate: 10
+  pollutionRate: 10
+  UICanvas: {fileID: 0}
+  waterMask: {fileID: 0}
+  TestSeed: {fileID: 135582, guid: 3c08c3f502f2bb546b6780bad344510a, type: 2}
+  TestPlant: {fileID: 184624, guid: f3ca85a8358c1ca4ebe3cf3d726aae82, type: 2}
+  maxWater: 100
+  minWater: 0
+  currentWater: 100
+  plantPrefabs: []
+--- !u!143 &14368388
+CharacterController:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104570}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.79999995
-  m_Radius: .5
+  m_Height: .100000001
+  m_Radius: .300000012
   m_SlopeLimit: 45
   m_StepOffset: .300000012
   m_SkinWidth: .0799999982
@@ -400,7 +402,7 @@ ParticleSystem:
   looping: 1
   prewarm: 0
   playOnAwake: 0
-  moveWithTransform: 0
+  moveWithTransform: 1
   InitialModule:
     enabled: 1
     startLifetime:
@@ -1445,5 +1447,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 128208}
+  m_RootGameObject: {fileID: 104570}
   m_IsPrefabParent: 1
