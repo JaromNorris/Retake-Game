@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -22,7 +23,12 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public GameObject hotbarUI;
+    public GameObject inventoryUI;
+
     int nextInventory;
+    Image[] hotbarPanels;
+    Image[] inventoryPanels;
 
     // Use this for initialization
     void Start()
@@ -30,7 +36,26 @@ public class Inventory : MonoBehaviour
         nextInventory = 0;
         inventory = new InventoryEntry[inventorySize];
         hotbar = new InventoryEntry[hotbarSize];
-        UpdateHotbar(hotbar, inventory);
+
+        Transform hotbarPanelTransform = hotbarUI.transform.Find("HotbarPanels");
+        hotbarPanels = new Image[hotbarPanelTransform.childCount];
+        for (int i = 0; i < hotbarPanels.Length; i++)
+        {
+            hotbarPanels[i] = hotbarPanelTransform.GetChild(i).gameObject.GetComponent<Image>();
+            hotbarPanels[i].gameObject.SetActive(false);
+        }
+
+        Transform inventoryPanelTransform = inventoryUI.transform.Find("InventoryPanels");
+        Transform[] rowTransforms = new Transform[inventoryPanelTransform.childCount];
+        inventoryPanels = new Image[50];
+        for (int i = 0; i < 5; i++ )
+            for (int j = 0; j < 10; j++) {
+                inventoryPanels[j + 10 * i] = inventoryPanelTransform.GetChild(i).GetChild(j).gameObject.GetComponent<Image>();
+                inventoryPanels[j + 10*i].gameObject.SetActive(false);
+        }
+
+        inventoryUI.SetActive(false);
+        
     }
 
     private void UpdateHotbar(InventoryEntry[] hotbar, InventoryEntry[] inventory)
@@ -40,6 +65,8 @@ public class Inventory : MonoBehaviour
             if (inventory[i] != null)
             {
                 hotbar[counter] = inventory[i];
+                hotbarPanels[counter].gameObject.SetActive(inventoryPanels[i].gameObject.activeSelf);
+                hotbarPanels[counter].sprite = inventoryPanels[i].sprite;
                 counter++;
             }
         currentItem = inventory[currentIndex];
@@ -69,6 +96,8 @@ public class Inventory : MonoBehaviour
             return;
         // if nothing else, add it to the inventory at the first available spot
         inventory[nextInventory] = ie;
+        inventoryPanels[nextInventory].gameObject.SetActive(true);
+        inventoryPanels[nextInventory].sprite = ie.sprite;
         // increment the indicator for the next open spot until it finds one
         //   or reaches the end of the inventory
         do
@@ -93,10 +122,13 @@ public class Inventory : MonoBehaviour
 
         // create game object from InventoryEntry
         GameObject plantableObject = (GameObject)Instantiate(Resources.Load(o.prefabName));
-
+        Debug.Log("Removing");
         inventory[index].count--;
         if (inventory[index].count == 0)
+        {
             inventory[index] = null;
+            inventoryPanels[index].gameObject.SetActive(false);
+        }
         if (index < nextInventory)
             nextInventory = index;
         UpdateHotbar(hotbar, inventory);

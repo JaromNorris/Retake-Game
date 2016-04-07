@@ -213,6 +213,16 @@ public class Player_Raycast : MonoBehaviour
             }
         }
 
+        else if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            GameObject inventory = UICanvas.transform.Find("InventoryUI").gameObject;
+            if (!inventory.activeSelf)
+                inventory.SetActive(true);
+            else
+                inventory.SetActive(false);
+
+        }
+
 		/*
         // I am hijacking this space so we can have all of our user inputs in one place
         if (Input.GetKeyDown(KeyCode.Alpha1))

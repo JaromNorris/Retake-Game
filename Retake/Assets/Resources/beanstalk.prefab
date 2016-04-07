@@ -17390,6 +17390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabName: beanstalk
   species: Beanstalk
+  sprite: {fileID: 21300000, guid: 29595f875e4e8de40ad444bd2e72f6fa, type: 3}
   currentSize: 1
   maxSize: 1
   lightRequired: 0
@@ -17445,6 +17446,11 @@ Prefab:
       propertyPath: waterRequired
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 29595f875e4e8de40ad444bd2e72f6fa,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 187298}
