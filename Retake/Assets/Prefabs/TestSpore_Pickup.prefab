@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: TestSpore
   number_of: 1
+  sprite: {fileID: 21300000, guid: 4a1feb766defc9b4e9d060462b78b6f2, type: 3}
 --- !u!136 &13617336
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -145,6 +146,11 @@ Prefab:
       propertyPath: m_TagString
       value: NewSeed
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4a1feb766defc9b4e9d060462b78b6f2,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 133986}
