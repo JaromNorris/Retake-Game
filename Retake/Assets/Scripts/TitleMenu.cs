@@ -54,6 +54,6 @@ public class TitleMenu : MonoBehaviour {
 
     public void newGameClick ()
     {
-        Application.LoadLevel("tutorial_a");
+        Application.LoadLevel("Level_1_K");
     }
 }
