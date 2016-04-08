@@ -7958,9 +7958,10 @@ GameObject:
   - 114: {fileID: 11488998}
   - 23: {fileID: 2368996}
   - 64: {fileID: 6413294}
+  - 65: {fileID: 6599470}
   m_Layer: 0
   m_Name: beanstalk
-  m_TagString: Plant
+  m_TagString: Ladder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17359,7 +17360,19 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 0
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4300000, guid: aad595beb63b28146991751bbb7cdf8b, type: 3}
+--- !u!65 &6599470
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &9564980
 Animator:
   serializedVersion: 3
@@ -17451,6 +17464,22 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 29595f875e4e8de40ad444bd2e72f6fa,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Ladder
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: aad595beb63b28146991751bbb7cdf8b, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 187298}
