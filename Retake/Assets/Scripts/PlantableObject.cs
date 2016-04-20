@@ -12,6 +12,7 @@ public abstract class PlantableObject : MonoBehaviour
     public int waterRequired;
 	public int pollutionRequired;
     public Plantable_Space currentSpace;
+	public bool climbable;
 
 	public GameObject nextGrowth;
 	private ParticleSystem growthParticles;

@@ -96,9 +96,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 		private void OnTriggerEnter (Collider col)
 		{
+			Debug.Log("Colliding");
+			//bool Bean = col.gameObject.name == ("beanstalk");
+			//col.gameObject.GetComponent ("Species")
+
+			//var climb = plant.GetComponent ("PlantableObject");
 			//Debug.Log ("Tada");
-			if(col.gameObject.tag == "Ladder")
+			if(col.gameObject.name == "beanstalk(Clone)")
 			{
+				Debug.Log("Climbing");
 				canClimb = true;
 				//Debug.Log(m_MoveDir);
 			}
