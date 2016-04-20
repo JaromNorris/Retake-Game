@@ -4,7 +4,7 @@ using System.Collections;
 public class ThirdPCameraScript : MonoBehaviour {
 
 	public bool fpsMode = true;
-	public Camera FirstPCamera;
+	Camera FirstPCamera;
 	public Camera ThirdPCamera; 
 
 
@@ -12,12 +12,9 @@ public class ThirdPCameraScript : MonoBehaviour {
 		// Use this for initialization
 	void Start () {
 		gameObject.tag = "ThirdPersonCamera";
+        FirstPCamera = GetComponentInParent<Camera>();
 		FirstPCamera.enabled = true;
 		ThirdPCamera.enabled = false;
-		//GameObject.Find ("Main Camera").tag = "Untagged";
-		//GameObject.FindGameObjectWithTag ("MainCamera").name = "FirstPCamera";
-		//GameObject.FindGameObjectWithTag ("ThirdPersonCamera").name = "ThirdPCamera";
-
 	}
 
 	// Update is called once per frame
