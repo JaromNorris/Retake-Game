@@ -15,10 +15,6 @@ public class ThirdPCameraScript : MonoBehaviour {
         FirstPCamera = GetComponentInParent<Camera>();
 		FirstPCamera.enabled = true;
 		ThirdPCamera.enabled = false;
-		//GameObject.Find ("Main Camera").tag = "Untagged";
-		//GameObject.FindGameObjectWithTag ("MainCamera").name = "FirstPCamera";
-		//GameObject.FindGameObjectWithTag ("ThirdPersonCamera").name = "ThirdPCamera";
-
 	}
 
 	// Update is called once per frame

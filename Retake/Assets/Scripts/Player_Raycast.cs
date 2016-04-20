@@ -10,6 +10,11 @@ public class Player_Raycast : MonoBehaviour
     public float pollutionRate;
     public GameObject UICanvas;
     public GameObject waterMask;
+    [SerializeField] private AudioClip waterSound;
+    [SerializeField] private AudioClip detoxSound;
+    [SerializeField] private AudioClip plantSound;
+    [SerializeField] private AudioClip pickSound;
+
     private RaycastHit hitObj;
 
     public GameObject TestSeed;
@@ -23,6 +28,7 @@ public class Player_Raycast : MonoBehaviour
 	public GameObject[] plantPrefabs;
 
 	ParticleSystem waterParticles;
+    private AudioSource audioSource;
 
     Inventory playerInventory;
     float trueWaterRate;
@@ -46,6 +52,7 @@ public class Player_Raycast : MonoBehaviour
 
         GameObject inventoryUI = UICanvas.transform.Find("InventoryUI").gameObject;
         inventoryUI.GetComponent<CanvasGroup>().alpha = 0;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -99,7 +106,6 @@ public class Player_Raycast : MonoBehaviour
         // Places an object from inventory if able
         if (Input.GetMouseButtonDown(0) && Physics.Raycast(this.transform.position, this.transform.forward, out hitObj, viewDistance))
         {
-
             if (hitObj.collider.tag == "Plantable")
             {
                 Plantable_Space space;
@@ -111,6 +117,7 @@ public class Player_Raycast : MonoBehaviour
                         plantableObject.transform.position = hitObj.transform.position;
                         plantableObject.transform.rotation = hitObj.transform.rotation;
 						plantableObject.GetComponent<Animator>().SetBool("Active", true);
+                        audioSource.PlayOneShot(plantSound);
                         if (!space.addPlantableObject(plantableObject))
                             Debug.LogWarning("That object cannot be planted there.");
                     }
@@ -143,23 +150,27 @@ public class Player_Raycast : MonoBehaviour
                     entry.SetInventoryEntry(seed); // this should automatically add the correct number of seeds for clumps of loose seeds
                     playerInventory.Add(entry);
                     Destroy(hitObj.collider.gameObject);
+                    audioSource.PlayOneShot(pickSound);
                 }
-                //GameObject newSeed = Instantiate(Resources.Load(hitObj.collider.gameObject.GetComponent<New_Seed>().name)) as GameObject;
-                //playerInventory.Add(newSeed.GetComponent<Seed>());
-                //Destroy(newSeed);
             }
             // we hit a plantable space
             else if (hitObj.collider.tag == "Plantable")
             {
                 if ((entry = hitObj.collider.gameObject.GetComponent<Plantable_Space>().removePlantableObject()) != null)
+                {
                     playerInventory.Add(entry);
+                    audioSource.PlayOneShot(pickSound);
+                }
             }
             // we hit a plantable object within a plantable space
             else if (hitObj.collider.tag == "Plant" || hitObj.collider.tag == "Seed")
             {
                 PlantableObject currentObject = hitObj.collider.gameObject.GetComponent<PlantableObject>();
                 if ((entry = currentObject.currentSpace.removePlantableObject()) != null)
+                {
                     playerInventory.Add(entry);
+                    audioSource.PlayOneShot(pickSound);
+                }   
             }
         }
 		
@@ -175,30 +186,42 @@ public class Player_Raycast : MonoBehaviour
                     waterParticles.Play();
                 if (!waterParticles.enableEmission)
                     waterParticles.enableEmission = true;
+                if (audioSource.clip != waterSound || !audioSource.isPlaying)
+                {
+                    audioSource.clip = waterSound;
+                    audioSource.loop = true;
+                    audioSource.Play();
+                }
+
+                //We hit an object
+                if (Physics.Raycast(this.transform.position, this.transform.forward, out hitObj, viewDistance))
+                {
+                    Plantable_Space plantSpace;
+                    // we hit a plantable space
+                    if (hitObj.collider.tag == "Plantable")
+                    {
+                        plantSpace = hitObj.collider.gameObject.GetComponent<Plantable_Space>();
+                        if (plantSpace.waterPresent < plantSpace.maximumWater)
+                            plantSpace.waterPresent += trueWaterRate;
+                    }
+                }
 			}
 			else if (currentWater < minWater)
 			{
 				currentWater = 0;
                 waterParticles.enableEmission = false;
+                if (audioSource.clip == waterSound)
+                    audioSource.Stop();
 			}
 			
 
-			//We hit an object
-			if(Physics.Raycast(this.transform.position, this.transform.forward, out hitObj, viewDistance))
-			{
-	            Plantable_Space plantSpace;
-	            // we hit a plantable space
-	            if (hitObj.collider.tag == "Plantable")
-	            {
-	                plantSpace = hitObj.collider.gameObject.GetComponent<Plantable_Space>();
-	                if (plantSpace.waterPresent < plantSpace.maximumWater)
-	                    plantSpace.waterPresent += trueWaterRate;
-	            }
-			}
+			
         }
 		else if(waterParticles.enableEmission)
 		{
             waterParticles.enableEmission = false;
+            if (audioSource.clip == waterSound)
+                audioSource.Stop();
 		}
         // Looking at object and pressing 'e'
         // Decontaminates soil if in range
