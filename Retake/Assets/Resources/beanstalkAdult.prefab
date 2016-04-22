@@ -7960,7 +7960,7 @@ GameObject:
   - 64: {fileID: 6413294}
   - 65: {fileID: 6599470}
   m_Layer: 0
-  m_Name: beanstalk
+  m_Name: beanstalkAdult
   m_TagString: Ladder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

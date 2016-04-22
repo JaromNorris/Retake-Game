@@ -29,8 +29,8 @@ GameObject:
   - 114: {fileID: 11448618}
   - 65: {fileID: 6564928}
   m_Layer: 0
-  m_Name: newwaterlilyfinalstage2
-  m_TagString: Untagged
+  m_Name: lilyAdult
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,14 +137,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4b50e5e9e2400444bf312d5869164e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabName: WaterLillyFinal
-  species: Water Lilly
+  prefabName: lilyAdult
+  species: Water Lily
+  sprite: {fileID: 0}
   currentSize: 1
   maxSize: 1
   lightRequired: 0
   waterRequired: 0
   pollutionRequired: 0
   currentSpace: {fileID: 0}
+  climbable: 0
   nextGrowth: {fileID: 0}
   Sun: {fileID: 0}
   timePlanted: 0
@@ -157,7 +159,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: species
+      value: Water Lily
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: prefabName
+      value: lilyAdult
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Plant
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 198962}

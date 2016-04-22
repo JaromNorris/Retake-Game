@@ -1,61 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &117910
+--- !u!1 &115130
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 411858}
-  m_Layer: 0
-  m_Name: group2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &161308
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 440632}
-  m_Layer: 0
-  m_Name: group
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &162668
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 421202}
-  - 95: {fileID: 9571660}
-  - 114: {fileID: 11487768}
-  - 65: {fileID: 6584004}
-  m_Layer: 0
-  m_Name: lilyBudding
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &168620
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 497382}
+  - 4: {fileID: 497094}
   m_Layer: 0
   m_Name: group1
   m_TagString: Untagged
@@ -63,126 +15,147 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &179854
+--- !u!1 &116140
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 463354}
+  - 4: {fileID: 436976}
+  - 95: {fileID: 9523468}
+  - 114: {fileID: 11402006}
+  - 65: {fileID: 6547324}
   m_Layer: 0
-  m_Name: group3
+  m_Name: lilyMiddle
+  m_TagString: Plant
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &186490
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 461992}
+  m_Layer: 0
+  m_Name: group2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &196152
+--- !u!1 &196116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 441836}
+  m_Layer: 0
+  m_Name: group
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &198908
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 471278}
-  - 33: {fileID: 3301962}
-  - 23: {fileID: 2353026}
+  - 4: {fileID: 412492}
+  - 33: {fileID: 3318520}
+  - 23: {fileID: 2305198}
+  - 114: {fileID: 11407346}
   m_Layer: 0
-  m_Name: waterlilybuddingstage:pCylinder5
+  m_Name: waterlilyadultstage:pCylinder3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &411858
+--- !u!4 &412492
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 117910}
+  m_GameObject: {fileID: 198908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.51799811e-05, y: -.00263184006, z: 0}
+  m_LocalPosition: {x: 2.51799811e-05, y: .00263184006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 421202}
-  m_RootOrder: 2
---- !u!4 &421202
+  m_Father: {fileID: 461992}
+  m_RootOrder: 0
+--- !u!4 &436976
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 162668}
+  m_GameObject: {fileID: 116140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.3934536, y: 4.69999981, z: 11.547431}
-  m_LocalScale: {x: 87.1495132, y: 87.1495743, z: 87.1495743}
+  m_LocalPosition: {x: 17.3763065, y: 4.69999981, z: 13.586647}
+  m_LocalScale: {x: 47.2715302, y: 47.2715378, z: 47.2715378}
   m_Children:
-  - {fileID: 440632}
-  - {fileID: 497382}
-  - {fileID: 411858}
-  - {fileID: 463354}
+  - {fileID: 441836}
+  - {fileID: 497094}
+  - {fileID: 461992}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!4 &440632
+--- !u!4 &441836
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 161308}
+  m_GameObject: {fileID: 196116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.51799811e-05, y: -.00138812512, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 421202}
+  m_Father: {fileID: 436976}
   m_RootOrder: 0
---- !u!4 &463354
+--- !u!4 &461992
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 179854}
+  m_GameObject: {fileID: 186490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0232364796, y: 0, z: .00014498501}
+  m_LocalPosition: {x: -2.51799811e-05, y: -.00263184006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 471278}
-  m_Father: {fileID: 421202}
-  m_RootOrder: 3
---- !u!4 &471278
+  - {fileID: 412492}
+  m_Father: {fileID: 436976}
+  m_RootOrder: 2
+--- !u!4 &497094
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196152}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0466758236, y: 0, z: -.00079999998}
-  m_LocalScale: {x: 1.03628576, y: 1.036286, z: 1.036286}
-  m_Children: []
-  m_Father: {fileID: 463354}
-  m_RootOrder: 0
---- !u!4 &497382
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 168620}
+  m_GameObject: {fileID: 115130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .000113300084, y: .0030490153, z: -.000568774936}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 421202}
+  m_Father: {fileID: 436976}
   m_RootOrder: 1
---- !u!23 &2353026
+--- !u!23 &2305198
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196152}
+  m_GameObject: {fileID: 198908}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 31a3ae78a6caee04c87e015da8ca3222, type: 2}
+  - {fileID: 2100000, guid: 61e4d5ec57d36264ba21e0e78b75aeab, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -196,34 +169,34 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3301962
+--- !u!33 &3318520
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 196152}
-  m_Mesh: {fileID: 4300000, guid: 2e4829c9f7816c1499b00f009eaf2103, type: 3}
---- !u!65 &6584004
+  m_GameObject: {fileID: 198908}
+  m_Mesh: {fileID: 4300000, guid: c8858ebbd5d90cc4ea1ca4077aea8421, type: 3}
+--- !u!65 &6547324
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 162668}
+  m_GameObject: {fileID: 116140}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .00999999978, y: .00100000005, z: .00999999978}
-  m_Center: {x: .000500000024, y: -0, z: -.000500000024}
---- !u!95 &9571660
+  m_Size: {x: .0160000008, y: .00100000005, z: .0160000008}
+  m_Center: {x: .000500000024, y: -.00179999997, z: 0}
+--- !u!95 &9523468
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 162668}
+  m_GameObject: {fileID: 116140}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 2e4829c9f7816c1499b00f009eaf2103, type: 3}
+  m_Avatar: {fileID: 9000000, guid: c8858ebbd5d90cc4ea1ca4077aea8421, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -232,26 +205,55 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11487768
+--- !u!114 &11402006
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 162668}
+  m_GameObject: {fileID: 116140}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4b50e5e9e2400444bf312d5869164e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabName: WaterLillyMid
+  prefabName: lilyMiddle
   species: Water Lily
+  sprite: {fileID: 0}
   currentSize: 1
   maxSize: 1
   lightRequired: 0
   waterRequired: 0
   pollutionRequired: 0
   currentSpace: {fileID: 0}
-  nextGrowth: {fileID: 116140, guid: 68c57e82d9fbd92439590d0a6d5b8046, type: 2}
+  climbable: 0
+  nextGrowth: {fileID: 198962, guid: c82e98436fbd28643b5b934992f83613, type: 2}
+  Sun: {fileID: 0}
+  timePlanted: 0
+  secondsInDay: 0
+  daysSincePlanted: 0
+  daysToMature: 1
+--- !u!114 &11407346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4b50e5e9e2400444bf312d5869164e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabName: WaterLillyMid
+  species: Water Lilly
+  sprite: {fileID: 0}
+  currentSize: 1
+  maxSize: 1
+  lightRequired: 0
+  waterRequired: 0
+  pollutionRequired: 0
+  currentSpace: {fileID: 0}
+  climbable: 0
+  nextGrowth: {fileID: 198962, guid: c82e98436fbd28643b5b934992f83613, type: 2}
   Sun: {fileID: 0}
   timePlanted: 0
   secondsInDay: 0
@@ -265,14 +267,18 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
-      propertyPath: nextGrowth
-      value: 
-      objectReference: {fileID: 116140, guid: 68c57e82d9fbd92439590d0a6d5b8046, type: 2}
+      propertyPath: species
+      value: Water Lily
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: daysToMature
-      value: 1
+      propertyPath: prefabName
+      value: lilyMiddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Plant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 162668}
+  m_RootGameObject: {fileID: 116140}
   m_IsPrefabParent: 1

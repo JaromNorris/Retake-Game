@@ -14,7 +14,7 @@ GameObject:
   - 136: {fileID: 13619930}
   - 114: {fileID: 11440878}
   m_Layer: 0
-  m_Name: stalkseedbrown
+  m_Name: beanstalkNewSeed
   m_TagString: NewSeed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de46c665248d685438855ff55d65aff5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: beanstalk
+  name: beanstalkAdult
   number_of: 0
   sprite: {fileID: 21300000, guid: 29595f875e4e8de40ad444bd2e72f6fa, type: 3}
 --- !u!136 &13619930
@@ -119,6 +119,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 29595f875e4e8de40ad444bd2e72f6fa,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: name
+      value: beanstalkAdult
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 136834}

@@ -67,13 +67,11 @@ public class Inventory : MonoBehaviour
     private void UpdateHotbar(InventoryEntry[] hotbar, InventoryEntry[] inventory)
     {
         for (int i = 0; i < hotbarSize; i++)
-            if (inventory[i] != null)
-            {
-                hotbar[i] = inventory[i];
-                hotbarPanels[i].sprite = hotbar[i].sprite;
-                hotbarPanels[i].gameObject.GetComponent<CanvasGroup>().alpha = inventoryPanels[i].gameObject.GetComponent<CanvasGroup>().alpha;
-                i++;
-            }
+        {
+            hotbar[i] = inventory[i];
+            hotbarPanels[i].sprite = inventoryPanels[i].sprite;
+            hotbarPanels[i].gameObject.GetComponent<CanvasGroup>().alpha = inventoryPanels[i].gameObject.GetComponent<CanvasGroup>().alpha;
+        }
         currentItem = inventory[currentIndex];
     }
 
