@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: b4218fb1b9c765f4d8983a4430f7295c
-timeCreated: 1461709453
+guid: a8654229e8516bb469d38e04294fc560
+timeCreated: 1461708481
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -19,16 +19,13 @@ ModelImporter:
     100022: Fryer 31" [340465]
     100024: Griddle-Grooved 60" x 31" [342152]
     100026: Griddle-Grooved 60" x 31" [342363]
-    100028: group
-    100030: group1
-    100032: pPlane1
-    100034: QF_Eagle_CDTCL_cat CDTCL [330913]
-    100036: QF_Eagle_F1916-VSCS F1916-VSCS [338679]
-    100038: QF_Eagle_F1916-VSCS F1916-VSCS [338901]
-    100040: Refrigerator-Walk-In 47" x 70" [343255]
-    100042: Refrigerator-Walk-In 47" x 70" [343520]
-    100044: Refrigerator-Walk-In 47" x 70" [344748]
-    100046: //RootNode
+    100028: QF_Eagle_CDTCL_cat CDTCL [330913]
+    100030: QF_Eagle_F1916-VSCS F1916-VSCS [338679]
+    100032: QF_Eagle_F1916-VSCS F1916-VSCS [338901]
+    100034: Refrigerator-Walk-In 47" x 70" [343255]
+    100036: Refrigerator-Walk-In 47" x 70" [343520]
+    100038: Refrigerator-Walk-In 47" x 70" [344748]
+    100040: //RootNode
     400000: '3D View: {3D}'
     400002: Basic Roof Generic - 12" [357235]
     400004: Basic Wall Generic - 5" [329361]
@@ -43,16 +40,13 @@ ModelImporter:
     400022: Fryer 31" [340465]
     400024: Griddle-Grooved 60" x 31" [342152]
     400026: Griddle-Grooved 60" x 31" [342363]
-    400028: group
-    400030: group1
-    400032: pPlane1
-    400034: QF_Eagle_CDTCL_cat CDTCL [330913]
-    400036: QF_Eagle_F1916-VSCS F1916-VSCS [338679]
-    400038: QF_Eagle_F1916-VSCS F1916-VSCS [338901]
-    400040: Refrigerator-Walk-In 47" x 70" [343255]
-    400042: Refrigerator-Walk-In 47" x 70" [343520]
-    400044: Refrigerator-Walk-In 47" x 70" [344748]
-    400046: //RootNode
+    400028: QF_Eagle_CDTCL_cat CDTCL [330913]
+    400030: QF_Eagle_F1916-VSCS F1916-VSCS [338679]
+    400032: QF_Eagle_F1916-VSCS F1916-VSCS [338901]
+    400034: Refrigerator-Walk-In 47" x 70" [343255]
+    400036: Refrigerator-Walk-In 47" x 70" [343520]
+    400038: Refrigerator-Walk-In 47" x 70" [344748]
+    400040: //RootNode
     2300000: Basic Roof Generic - 12" [357235]
     2300002: Basic Wall Generic - 5" [329361]
     2300004: Basic Wall Generic - 8" [315216]
@@ -66,13 +60,12 @@ ModelImporter:
     2300020: Fryer 31" [340465]
     2300022: Griddle-Grooved 60" x 31" [342152]
     2300024: Griddle-Grooved 60" x 31" [342363]
-    2300026: pPlane1
-    2300028: QF_Eagle_CDTCL_cat CDTCL [330913]
-    2300030: QF_Eagle_F1916-VSCS F1916-VSCS [338679]
-    2300032: QF_Eagle_F1916-VSCS F1916-VSCS [338901]
-    2300034: Refrigerator-Walk-In 47" x 70" [343255]
-    2300036: Refrigerator-Walk-In 47" x 70" [343520]
-    2300038: Refrigerator-Walk-In 47" x 70" [344748]
+    2300026: QF_Eagle_CDTCL_cat CDTCL [330913]
+    2300028: QF_Eagle_F1916-VSCS F1916-VSCS [338679]
+    2300030: QF_Eagle_F1916-VSCS F1916-VSCS [338901]
+    2300032: Refrigerator-Walk-In 47" x 70" [343255]
+    2300034: Refrigerator-Walk-In 47" x 70" [343520]
+    2300036: Refrigerator-Walk-In 47" x 70" [344748]
     3300000: Basic Roof Generic - 12" [357235]
     3300002: Basic Wall Generic - 5" [329361]
     3300004: Basic Wall Generic - 8" [315216]
@@ -86,13 +79,12 @@ ModelImporter:
     3300020: Fryer 31" [340465]
     3300022: Griddle-Grooved 60" x 31" [342152]
     3300024: Griddle-Grooved 60" x 31" [342363]
-    3300026: pPlane1
-    3300028: QF_Eagle_CDTCL_cat CDTCL [330913]
-    3300030: QF_Eagle_F1916-VSCS F1916-VSCS [338679]
-    3300032: QF_Eagle_F1916-VSCS F1916-VSCS [338901]
-    3300034: Refrigerator-Walk-In 47" x 70" [343255]
-    3300036: Refrigerator-Walk-In 47" x 70" [343520]
-    3300038: Refrigerator-Walk-In 47" x 70" [344748]
+    3300026: QF_Eagle_CDTCL_cat CDTCL [330913]
+    3300028: QF_Eagle_F1916-VSCS F1916-VSCS [338679]
+    3300030: QF_Eagle_F1916-VSCS F1916-VSCS [338901]
+    3300032: Refrigerator-Walk-In 47" x 70" [343255]
+    3300034: Refrigerator-Walk-In 47" x 70" [343520]
+    3300036: Refrigerator-Walk-In 47" x 70" [344748]
     4300000: Basic Wall Generic - 8" [315216]
     4300002: Basic Wall Generic - 8" [315293]
     4300004: Basic Wall Generic - 8" [315401]
@@ -112,27 +104,6 @@ ModelImporter:
     4300032: Refrigerator-Walk-In 47" x 70" [344748]
     4300034: Door-Exterior-Double-Two_Lite 96" x 84" [357039]
     4300036: Basic Roof Generic - 12" [357235]
-    4300038: pPlane1
-    6400000: Basic Roof Generic - 12" [357235]
-    6400002: Basic Wall Generic - 5" [329361]
-    6400004: Basic Wall Generic - 8" [315216]
-    6400006: Basic Wall Generic - 8" [315293]
-    6400008: Basic Wall Generic - 8" [315401]
-    6400010: Basic Wall Generic - 8" [315444]
-    6400012: Door-Exterior-Double-Two_Lite 96" x 84" [357039]
-    6400014: Door-Traffic-Eliason-(SCP-1)-Double 72" x 84" [329426]
-    6400016: Freezer-Soft_Serve-Taylor-Twist-(C712-C713) ERROR_LOAD TYPE CATALOG [334705]
-    6400018: Fryer 31" [340228]
-    6400020: Fryer 31" [340465]
-    6400022: Griddle-Grooved 60" x 31" [342152]
-    6400024: Griddle-Grooved 60" x 31" [342363]
-    6400026: pPlane1
-    6400028: QF_Eagle_CDTCL_cat CDTCL [330913]
-    6400030: QF_Eagle_F1916-VSCS F1916-VSCS [338679]
-    6400032: QF_Eagle_F1916-VSCS F1916-VSCS [338901]
-    6400034: Refrigerator-Walk-In 47" x 70" [343255]
-    6400036: Refrigerator-Walk-In 47" x 70" [343520]
-    6400038: Refrigerator-Walk-In 47" x 70" [344748]
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -159,7 +130,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
