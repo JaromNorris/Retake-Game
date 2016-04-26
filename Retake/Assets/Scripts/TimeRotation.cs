@@ -36,6 +36,7 @@ public class TimeRotation : MonoBehaviour {
 			sunMultiplier = 0;
 			moonMultiplier = 1;
 			timeMultiplier = nightTimeMultiplier;
+			RenderSettings.ambientSkyColor = Color.black;
 		}
 		else if (currentTime <= 0.25f) {
 			sunMultiplier = Mathf.Clamp01((currentTime - 0.23f) * (1 / 0.02f));
@@ -46,6 +47,9 @@ public class TimeRotation : MonoBehaviour {
 			sunMultiplier = Mathf.Clamp01(1 - ((currentTime - 0.73f) * (1 / 0.02f)));
 			moonMultiplier = Mathf.Clamp01((currentTime - 0.23f) * (1/0.02f));
 			timeMultiplier = dayTimeMultiplier;
+		}
+		else{
+			RenderSettings.ambientSkyColor = Color.gray;
 		}
 
 		//Change the intensity of the light based on time of day
