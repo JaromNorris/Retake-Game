@@ -64,7 +64,7 @@ public class Player_Raycast : MonoBehaviour
 		//Looking at object
 		if(Physics.Raycast (this.transform.position,this.transform.forward, out hitObj, viewDistance))
 		{
-			if(hitObj.collider.tag == "Plantable")
+			if(hitObj.collider.tag == "Plantable" && hitObj.collider.gameObject.GetComponent<Plantable_Space>())
 			{
 				if(lookingAt != hitObj.collider.gameObject && lookingAt !=null)
 				{
