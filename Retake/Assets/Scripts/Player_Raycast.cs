@@ -116,7 +116,11 @@ public class Player_Raycast : MonoBehaviour
                     {
                         plantableObject.transform.position = hitObj.transform.position;
                         plantableObject.transform.rotation = hitObj.transform.rotation;
-						plantableObject.GetComponent<Animator>().SetBool("Active", true);
+                        /*
+                        if(plantableObject.GetComponent<Animator>().Getc != null)
+						    plantableObject.GetComponent<Animator>().SetBool("Active", true);
+                         * */
+
                         audioSource.PlayOneShot(plantSound);
                         if (!space.addPlantableObject(plantableObject))
                             Debug.LogWarning("That object cannot be planted there.");

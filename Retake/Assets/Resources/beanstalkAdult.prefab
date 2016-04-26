@@ -17401,7 +17401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4b50e5e9e2400444bf312d5869164e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabName: beanstalk
+  prefabName: beanstalkAdult
   species: Beanstalk
   sprite: {fileID: 21300000, guid: 29595f875e4e8de40ad444bd2e72f6fa, type: 3}
   currentSize: 1
@@ -17426,7 +17426,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: prefabName
-      value: beanstalk
+      value: beanstalkAdult
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: species
