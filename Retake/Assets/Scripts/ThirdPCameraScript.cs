@@ -5,9 +5,7 @@ public class ThirdPCameraScript : MonoBehaviour {
 
 	public bool fpsMode = true;
 	Camera FirstPCamera;
-	public Camera ThirdPCamera; 
-
-
+	public Camera ThirdPCamera;
 		
 		// Use this for initialization
 	void Start () {
@@ -39,8 +37,7 @@ public class ThirdPCameraScript : MonoBehaviour {
 				FirstPCamera.enabled = false;
 				//GameObject.FindGameObjectWithTag ("FirstPCamera").tag = "FirstPersonCamera";
 				//GameObject.FindGameObjectWithTag ("ThirdPe").tag = "MainCamera";
-				}
+			}
 		}
-		
 	}
 }

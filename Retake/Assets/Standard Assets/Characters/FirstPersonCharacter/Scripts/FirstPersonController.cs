@@ -43,6 +43,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+        private Animator anim;
+
+        private bool walking;
+        private bool running;
+        private bool strafingL;
+        private bool strafingR;
+        private bool idle;
 
         // Use this for initialization
         private void Start()
@@ -57,6 +64,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+            anim = GetComponent<Animator>();
+
+            walking = false;
+            running = false;
+            strafingL = false;
+            strafingR = false;
+            idle = true;
         }
 
 
@@ -254,6 +268,80 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // Read input
             float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
             float vertical = CrossPlatformInputManager.GetAxis("Vertical");
+
+            if ((Math.Abs(horizontal) - Math.Abs(vertical) > 0) && horizontal < 0 && !strafingL)
+            {
+                anim.SetBool("isStrafingL", true);
+                anim.SetBool("isStrafingR", false);
+                anim.SetBool("walking", false);
+                anim.SetBool("running", false);
+                anim.SetBool("idle", false);
+                strafingL = true;
+                strafingR = false;
+                walking = false;
+                running = false;
+                idle = false;
+            }
+            else if ((Math.Abs(horizontal) - Math.Abs(vertical) > 0) && horizontal > 0 && !strafingR)
+            {
+                anim.SetBool("isStrafingL", false);
+                anim.SetBool("isStrafingR", true);
+                anim.SetBool("walking", false);
+                anim.SetBool("running", false);
+                anim.SetBool("idle", false);
+                strafingL = false;
+                strafingR = true;
+                walking = false;
+                running = false;
+                idle = false;
+            }
+            else if (vertical != 0 && Input.GetKey(KeyCode.LeftShift) & !running)
+            {
+                anim.SetBool("isStrafingL", false);
+                anim.SetBool("isStrafingR", false);
+                anim.SetBool("walking", false);
+                anim.SetBool("running", true);
+                anim.SetBool("idle", false);
+                strafingL = true;
+                strafingR = false;
+                walking = false;
+                running = true;
+                idle = false;
+            }
+            else if (vertical != 0 && !walking)
+            {
+                anim.SetBool("isStrafingL", false);
+                anim.SetBool("isStrafingR", false);
+                anim.SetBool("walking", true);
+                anim.SetBool("running", false);
+                anim.SetBool("idle", false);
+                strafingL = false;
+                strafingR = false;
+                walking = true;
+                running = false;
+                idle = false;
+            }
+            else if (vertical == 0 && horizontal == 0 && !idle)
+            {
+                anim.SetBool("isStrafingL", false);
+                anim.SetBool("isStrafingR", false);
+                anim.SetBool("walking", false);
+                anim.SetBool("running", false);
+                anim.SetBool("idle", true);
+                strafingL = false;
+                strafingR = false;
+                walking = false;
+                running = false;
+                idle = true;
+            }
+            else
+            {
+                anim.SetBool("isStrafingL", false);
+                anim.SetBool("isStrafingR", false);
+                anim.SetBool("walking", false);
+                anim.SetBool("running", false);
+                anim.SetBool("idle", false);
+            }
 
             bool waswalking = m_IsWalking;
 

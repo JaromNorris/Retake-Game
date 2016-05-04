@@ -27,6 +27,9 @@ public class Player_Raycast : MonoBehaviour
 	// Array of all of our prefabs for seeds and plants
 	public GameObject[] plantPrefabs;
 
+    public GameObject playerModel;
+    private Animator anim;
+
 	ParticleSystem waterParticles;
     private AudioSource audioSource;
 
@@ -53,6 +56,7 @@ public class Player_Raycast : MonoBehaviour
         GameObject inventoryUI = UICanvas.transform.Find("InventoryUI").gameObject;
         inventoryUI.GetComponent<CanvasGroup>().alpha = 0;
         audioSource = GetComponent<AudioSource>();
+        anim = playerModel.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -106,6 +110,7 @@ public class Player_Raycast : MonoBehaviour
         // Places an object from inventory if able
         if (Input.GetMouseButtonDown(0) && Physics.Raycast(this.transform.position, this.transform.forward, out hitObj, viewDistance))
         {
+            anim.SetTrigger("pickup");
             if (hitObj.collider.tag == "Plantable")
             {
                 Plantable_Space space;
@@ -127,13 +132,13 @@ public class Player_Raycast : MonoBehaviour
                     }
                 }
             }
-			
         }
         // Looking at object and right-click
         // Interact with an object if possible.
         // Remove an object and add it to inventory if it's a plant or seed.
         else if (Input.GetMouseButtonDown(1) && Physics.Raycast(this.transform.position, this.transform.forward, out hitObj, viewDistance))
         {
+            anim.SetTrigger("pickup");
             Debug.Log("Selected " + hitObj.collider.name);
 
             // if the object we're interacting with is a trigger, activate it's effect
@@ -216,10 +221,7 @@ public class Player_Raycast : MonoBehaviour
                 waterParticles.enableEmission = false;
                 if (audioSource.clip == waterSound)
                     audioSource.Stop();
-			}
-			
-
-			
+			}	
         }
 		else if(waterParticles.enableEmission)
 		{
@@ -248,7 +250,6 @@ public class Player_Raycast : MonoBehaviour
                 inventoryCanvasGroup.alpha = 0;
             else
                 inventoryCanvasGroup.alpha = 1;
-
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -271,26 +272,5 @@ public class Player_Raycast : MonoBehaviour
             playerInventory.currentIndex = 8;
         else if (Input.GetKeyDown(KeyCode.Alpha0) && playerInventory.hotbarSize >= 10)
             playerInventory.currentIndex = 9;
-
-        /*
-        // refill the player's inventory
-        else if(Input.GetKeyDown(KeyCode.Return))
-        {
-            GameObject newPlant = Instantiate(TestPlant) as GameObject;
-            playerInventory.Add(newPlant.GetComponent<Plant>());
-            playerInventory.Add(newPlant.GetComponent<Plant>());
-            Destroy(newPlant);
-
-            GameObject newSeed = Instantiate(TestSeed) as GameObject;
-            playerInventory.Add(newSeed.GetComponent<Seed>());
-            playerInventory.Add(newSeed.GetComponent<Seed>());
-            Destroy(newSeed);
-
-            CanvasText.GetComponent<Text>().text = "Current item: " + playerInventory.currentItem.species + " "
-                + playerInventory.currentItem.type + " (" + playerInventory.currentItem.count + ")";
-        }
-        */
-
     }
-
 }

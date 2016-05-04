@@ -3,10 +3,9 @@ using System.Collections;
 
 public class LevelSwitch : MonoBehaviour {
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter()
     {
-        if (other.tag == "Player")
-            Application.LoadLevel("Level_1_m");
+        Application.LoadLevel("Level_1_m");
     }
 
 }
