@@ -535,6 +535,28 @@ ModelImporter:
       1.6 gpf [352945]
     101036: Water Closet - Flush Valve - Wall Mounted Public - Flushing Greater than
       1.6 gpf [353190]
+    101038: Assembled Stair Stair [339045]
+    101040: Assembled Stair Stair [339260]
+    101042: default1
+    101044: group
+    101046: group 1
+    101048: group1
+    101050: group2
+    101052: group3
+    101054: group4
+    101056: group5
+    101058: pasted__group
+    101060: pasted__group1
+    101062: pCylinder29
+    101064: polySurface1
+    101066: Railing Handrail - Rectangular [339189]
+    101068: Railing Handrail - Rectangular [339193]
+    101070: Railing Handrail - Rectangular [339361]
+    101072: Railing Handrail - Rectangular [339365]
+    101074: Railing Handrail - Rectangular [341512]
+    101076: Railing Handrail - Rectangular [342117]
+    101078: transform1
+    101080: transform2
     400000: '3D View: {3D}'
     400002: Assembled Stair Stair [328189]
     400004: Assembled Stair Stair [328189]_[328296]
@@ -1065,6 +1087,28 @@ ModelImporter:
       1.6 gpf [352945]
     401036: Water Closet - Flush Valve - Wall Mounted Public - Flushing Greater than
       1.6 gpf [353190]
+    401038: Assembled Stair Stair [339045]
+    401040: Assembled Stair Stair [339260]
+    401042: default1
+    401044: group
+    401046: group 1
+    401048: group1
+    401050: group2
+    401052: group3
+    401054: group4
+    401056: group5
+    401058: pasted__group
+    401060: pasted__group1
+    401062: pCylinder29
+    401064: polySurface1
+    401066: Railing Handrail - Rectangular [339189]
+    401068: Railing Handrail - Rectangular [339193]
+    401070: Railing Handrail - Rectangular [339361]
+    401072: Railing Handrail - Rectangular [339365]
+    401074: Railing Handrail - Rectangular [341512]
+    401076: Railing Handrail - Rectangular [342117]
+    401078: transform1
+    401080: transform2
     2300000: Assembled Stair Stair [328189]_[328296]
     2300002: Assembled Stair Stair [328189]_[328422]
     2300004: Assembled Stair Stair [328189]_[328423]
@@ -1587,6 +1631,7 @@ ModelImporter:
       1.6 gpf [352945]
     2301020: Water Closet - Flush Valve - Wall Mounted Public - Flushing Greater than
       1.6 gpf [353190]
+    2301022: polySurface1
     3300000: Assembled Stair Stair [328189]_[328296]
     3300002: Assembled Stair Stair [328189]_[328422]
     3300004: Assembled Stair Stair [328189]_[328423]
@@ -2109,6 +2154,7 @@ ModelImporter:
       1.6 gpf [352945]
     3301020: Water Closet - Flush Valve - Wall Mounted Public - Flushing Greater than
       1.6 gpf [353190]
+    3301022: polySurface1
     4300000: Basic Wall Generic - 8" [315771]
     4300002: Basic Wall Generic - 8" [315811]
     4300004: Basic Wall Generic - 8" [315861]
@@ -2522,6 +2568,116 @@ ModelImporter:
     4300810: Water Closet - Flush Valve - Wall Mounted Public - 1.6 gpf [353813]
     4300812: Bradley-Washroom_Accessories-Mirrors-7405 Bradley-Washroom_Accessories-Mirrors-7405
       [355145]
+    4300814: System Panel Glazed [318100]
+    4300816: System Panel Glazed [318102]
+    4300818: System Panel Glazed [318104]
+    4300820: System Panel Glazed [318112]
+    4300822: System Panel Glazed [318113]
+    4300824: System Panel Glazed [318114]
+    4300826: System Panel Glazed [318118]
+    4300828: System Panel Glazed [318119]
+    4300830: System Panel Glazed [318120]
+    4300832: System Panel Glazed [318121]
+    4300834: System Panel Glazed [318122]
+    4300836: System Panel Glazed [318123]
+    4300838: System Panel Glazed [318126]
+    4300840: System Panel Glazed [318127]
+    4300842: System Panel Glazed [318128]
+    4300844: System Panel Glazed [318129]
+    4300846: System Panel Glazed [318130]
+    4300848: System Panel Glazed [318131]
+    4300850: Rectangular Mullion 2.5" x 5" rectangular [318150]
+    4300852: Rectangular Mullion 2.5" x 5" rectangular [318157]
+    4300854: Rectangular Mullion 2.5" x 5" rectangular [318158]
+    4300856: Rectangular Mullion 2.5" x 5" rectangular [318159]
+    4300858: Rectangular Mullion 2.5" x 5" rectangular [318160]
+    4300860: Rectangular Mullion 2.5" x 5" rectangular [318162]
+    4300862: Rectangular Mullion 2.5" x 5" rectangular [318163]
+    4300864: Rectangular Mullion 2.5" x 5" rectangular [318164]
+    4300866: Rectangular Mullion 2.5" x 5" rectangular [318165]
+    4300868: Rectangular Mullion 2.5" x 5" rectangular [318169]
+    4300870: Rectangular Mullion 2.5" x 5" rectangular [318170]
+    4300872: Rectangular Mullion 2.5" x 5" rectangular [318171]
+    4300874: Rectangular Mullion 2.5" x 5" rectangular [318185]
+    4300876: Rectangular Mullion 2.5" x 5" rectangular [318186]
+    4300878: Rectangular Mullion 2.5" x 5" rectangular [318187]
+    4300880: Rectangular Mullion 2.5" x 5" rectangular [318188]
+    4300882: Rectangular Mullion 2.5" x 5" rectangular [318189]
+    4300884: Rectangular Mullion 2.5" x 5" rectangular [318190]
+    4300886: Rectangular Mullion 2.5" x 5" rectangular [318191]
+    4300888: Rectangular Mullion 2.5" x 5" rectangular [318197]
+    4300890: Rectangular Mullion 2.5" x 5" rectangular [318198]
+    4300892: Rectangular Mullion 2.5" x 5" rectangular [318199]
+    4300894: Rectangular Mullion 2.5" x 5" rectangular [318200]
+    4300896: Rectangular Mullion 2.5" x 5" rectangular [318201]
+    4300898: Rectangular Mullion 2.5" x 5" rectangular [318202]
+    4300900: Rectangular Mullion 2.5" x 5" rectangular [318203]
+    4300902: Rectangular Mullion 2.5" x 5" rectangular [318205]
+    4300904: Rectangular Mullion 2.5" x 5" rectangular [318206]
+    4300906: Rectangular Mullion 2.5" x 5" rectangular [318207]
+    4300908: Rectangular Mullion 2.5" x 5" rectangular [318208]
+    4300910: Rectangular Mullion 2.5" x 5" rectangular [318210]
+    4300912: Rectangular Mullion 2.5" x 5" rectangular [318211]
+    4300914: Rectangular Mullion 2.5" x 5" rectangular [318212]
+    4300916: Rectangular Mullion 2.5" x 5" rectangular [318213]
+    4300918: Rectangular Mullion 2.5" x 5" rectangular [318219]
+    4300920: Rectangular Mullion 2.5" x 5" rectangular [318228]
+    4300922: Rectangular Mullion 2.5" x 5" rectangular [318239]
+    4300924: Rectangular Mullion 2.5" x 5" rectangular [318240]
+    4300926: Rectangular Mullion 2.5" x 5" rectangular [318241]
+    4300928: Rectangular Mullion 2.5" x 5" rectangular [318257]
+    4300930: Rectangular Mullion 2.5" x 5" rectangular [318258]
+    4300932: Rectangular Mullion 2.5" x 5" rectangular [318259]
+    4300934: System Panel Glazed [319193]
+    4300936: System Panel Glazed [319197]
+    4300938: System Panel Glazed [319198]
+    4300940: Rectangular Mullion 2.5" x 5" rectangular [319208]
+    4300942: Rectangular Mullion 2.5" x 5" rectangular [319210]
+    4300944: Rectangular Mullion 2.5" x 5" rectangular [319213]
+    4300946: Rectangular Mullion 2.5" x 5" rectangular [319218]
+    4300948: Rectangular Mullion 2.5" x 5" rectangular [319219]
+    4300950: Rectangular Mullion 2.5" x 5" rectangular [319222]
+    4300952: Rectangular Mullion 2.5" x 5" rectangular [319225]
+    4300954: Non-Monolithic Run 2" Tread 1" Nosing 1/4" Riser [328296]
+    4300956: Railing Handrail - Rectangular [328648]_[328998]
+    4300958: Railing Handrail - Rectangular [328652]_[328789]
+    4300960: Railing Handrail - Rectangular [328652]_[328789]
+    4300962: Railing Handrail - Rectangular [328652]_[328789]
+    4300964: Non-Monolithic Run 2" Tread 1" Nosing 1/4" Riser [330691]
+    4300966: Railing Handrail - Rectangular [330814]_[331110]
+    4300968: Railing Handrail - Rectangular [330814]_[331103]
+    4300970: Railing Handrail - Rectangular [330818]_[330933]
+    4300972: Railing Handrail - Rectangular [330818]_[330933]
+    4300974: Railing Handrail - Rectangular [330818]_[330927]
+    4300976: Railing Handrail - Rectangular [330818]_[330927]
+    4300978: Railing Handrail - Rectangular [330818]_[330933]
+    4300980: Railing Handrail - Rectangular [330818]_[330933]
+    4300982: Railing Handrail - Rectangular [330818]_[330927]
+    4300984: Single-Flush 36" x 84" [340924]
+    4300986: Single-Flush 36" x 84" [340980]
+    4300988: Single-Flush 36" x 84" [341009]
+    4300990: Single-Flush 36" x 84" [341088]
+    4300992: Single-Flush 36" x 84" [341179]
+    4300994: Single-Flush 36" x 84" [341198]
+    4300996: Lavatory - Oval 25"x20" - Private [352592]
+    4300998: Water Closet - Flush Valve - Wall Mounted Public - Flushing Greater than
+      1.6 gpf [352945]
+    4301000: Water Closet - Flush Valve - Wall Mounted Public - Flushing Greater than
+      1.6 gpf [353190]
+    4301002: Lavatory - Oval 25"x20" - Public [353409]
+    4301004: Water Closet - Flush Valve - Wall Mounted Public - 1.6 gpf [353836]
+    4301006: Water Closet - Flush Valve - Wall Mounted Public - 1.6 gpf [353960]
+    4301008: Bradley-Washroom_Accessories-Mirrors-7405 Bradley-Washroom_Accessories-Mirrors-7405
+      [355324]
+    4301010: Bradley-Washroom_Accessories-Mirrors-7405 Bradley-Washroom_Accessories-Mirrors-7405
+      [356139]
+    4301012: Bradley-Washroom_Accessories-Mirrors-7405 Bradley-Washroom_Accessories-Mirrors-7405
+      [357321]
+    4301014: Single-Flush 36" x 84" [357699]
+    4301016: Single-Flush 36" x 84" [357744]
+    4301018: Single-Flush 36" x 84" [357764]
+    4301020: Single-Flush 36" x 84" [357798]
+    4301022: polySurface1
     6400000: Assembled Stair Stair [328189]_[328296]
     6400002: Assembled Stair Stair [328189]_[328422]
     6400004: Assembled Stair Stair [328189]_[328423]
@@ -3044,6 +3200,7 @@ ModelImporter:
       1.6 gpf [352945]
     6401020: Water Closet - Flush Valve - Wall Mounted Public - Flushing Greater than
       1.6 gpf [353190]
+    6401022: polySurface1
   materials:
     importMaterials: 1
     materialName: 0
