@@ -27,7 +27,6 @@ public class Player_Raycast : MonoBehaviour
 	// Array of all of our prefabs for seeds and plants
 	public GameObject[] plantPrefabs;
 
-    public GameObject playerModel;
     private Animator anim;
 
 	ParticleSystem waterParticles;
@@ -56,7 +55,7 @@ public class Player_Raycast : MonoBehaviour
         GameObject inventoryUI = UICanvas.transform.Find("InventoryUI").gameObject;
         inventoryUI.GetComponent<CanvasGroup>().alpha = 0;
         audioSource = GetComponent<AudioSource>();
-        anim = playerModel.GetComponent<Animator>();
+        anim = GetComponentInParent<Animator>();
     }
 
     // Update is called once per frame

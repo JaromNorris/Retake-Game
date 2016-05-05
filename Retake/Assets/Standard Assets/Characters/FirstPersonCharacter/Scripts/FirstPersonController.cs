@@ -45,6 +45,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private AudioSource m_AudioSource;
         private Animator anim;
 
+        private float horizontal;
+        private float vertical;
         private bool walking;
         private bool running;
         private bool strafingL;
@@ -71,6 +73,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             strafingL = false;
             strafingR = false;
             idle = true;
+            horizontal = 0f;
+            vertical = 0f;
         }
 
 
@@ -84,6 +88,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
+                
 
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
             {
@@ -98,6 +103,80 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+
+            if ((Math.Abs(horizontal) - Math.Abs(vertical) > 0) && horizontal < 0 && !strafingL)
+            {    
+                anim.SetBool("isStrafingR", false);
+                anim.SetBool("walking", false);
+                anim.SetBool("running", false);
+                anim.SetBool("idle", false);
+                anim.SetBool("isStrafingL", true);
+                strafingR = false;
+                walking = false;
+                running = false;
+                idle = false;
+                strafingL = true;
+            }
+            else if ((Math.Abs(horizontal) - Math.Abs(vertical) > 0) && horizontal > 0 && !strafingR)
+            {
+                anim.SetBool("isStrafingL", false);
+                anim.SetBool("walking", false);
+                anim.SetBool("running", false);
+                anim.SetBool("idle", false);
+                anim.SetBool("isStrafingR", true);
+                strafingL = false;
+                walking = false;
+                running = false;
+                idle = false;
+                strafingR = true;
+            }
+            else if (vertical == 0 && horizontal == 0 && !idle)
+            {
+                anim.SetBool("isStrafingL", false);
+                anim.SetBool("isStrafingR", false);
+                anim.SetBool("walking", false);
+                anim.SetBool("running", false);
+                anim.SetBool("idle", true);
+                strafingL = false;
+                strafingR = false;
+                walking = false;
+                running = false;
+                idle = true;
+            }
+            else if (vertical != 0 && Input.GetKey(KeyCode.LeftShift) & !running)
+            {
+                anim.SetBool("isStrafingL", false);
+                anim.SetBool("isStrafingR", false);
+                anim.SetBool("walking", false);
+                anim.SetBool("idle", false);
+                anim.SetBool("running", true);
+                strafingL = false;
+                strafingR = false;
+                walking = false;
+                idle = false;
+                running = true;
+            }
+            else if (vertical != 0 && !walking && !Input.GetKey(KeyCode.LeftShift))
+            {
+                anim.SetBool("isStrafingL", false);
+                anim.SetBool("isStrafingR", false);
+                anim.SetBool("running", false);
+                anim.SetBool("idle", false);
+                anim.SetBool("walking", true);
+                strafingL = false;
+                strafingR = false;
+                running = false;
+                idle = false;
+                walking = true;
+            }
+            else
+            {
+                anim.SetBool("isStrafingL", false);
+                anim.SetBool("isStrafingR", false);
+                anim.SetBool("walking", false);
+                anim.SetBool("running", false);
+                anim.SetBool("idle", false);
+            }
         }
 
 
@@ -183,6 +262,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     PlayJumpSound();
                     m_Jump = false;
                     m_Jumping = true;
+                    anim.SetTrigger("jump");
                 }
             }
             else
@@ -266,82 +346,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void GetInput(out float speed)
         {
             // Read input
-            float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
-            float vertical = CrossPlatformInputManager.GetAxis("Vertical");
-
-            if ((Math.Abs(horizontal) - Math.Abs(vertical) > 0) && horizontal < 0 && !strafingL)
-            {
-                anim.SetBool("isStrafingL", true);
-                anim.SetBool("isStrafingR", false);
-                anim.SetBool("walking", false);
-                anim.SetBool("running", false);
-                anim.SetBool("idle", false);
-                strafingL = true;
-                strafingR = false;
-                walking = false;
-                running = false;
-                idle = false;
-            }
-            else if ((Math.Abs(horizontal) - Math.Abs(vertical) > 0) && horizontal > 0 && !strafingR)
-            {
-                anim.SetBool("isStrafingL", false);
-                anim.SetBool("isStrafingR", true);
-                anim.SetBool("walking", false);
-                anim.SetBool("running", false);
-                anim.SetBool("idle", false);
-                strafingL = false;
-                strafingR = true;
-                walking = false;
-                running = false;
-                idle = false;
-            }
-            else if (vertical != 0 && Input.GetKey(KeyCode.LeftShift) & !running)
-            {
-                anim.SetBool("isStrafingL", false);
-                anim.SetBool("isStrafingR", false);
-                anim.SetBool("walking", false);
-                anim.SetBool("running", true);
-                anim.SetBool("idle", false);
-                strafingL = true;
-                strafingR = false;
-                walking = false;
-                running = true;
-                idle = false;
-            }
-            else if (vertical != 0 && !walking)
-            {
-                anim.SetBool("isStrafingL", false);
-                anim.SetBool("isStrafingR", false);
-                anim.SetBool("walking", true);
-                anim.SetBool("running", false);
-                anim.SetBool("idle", false);
-                strafingL = false;
-                strafingR = false;
-                walking = true;
-                running = false;
-                idle = false;
-            }
-            else if (vertical == 0 && horizontal == 0 && !idle)
-            {
-                anim.SetBool("isStrafingL", false);
-                anim.SetBool("isStrafingR", false);
-                anim.SetBool("walking", false);
-                anim.SetBool("running", false);
-                anim.SetBool("idle", true);
-                strafingL = false;
-                strafingR = false;
-                walking = false;
-                running = false;
-                idle = true;
-            }
-            else
-            {
-                anim.SetBool("isStrafingL", false);
-                anim.SetBool("isStrafingR", false);
-                anim.SetBool("walking", false);
-                anim.SetBool("running", false);
-                anim.SetBool("idle", false);
-            }
+            horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
+            vertical = CrossPlatformInputManager.GetAxis("Vertical");
 
             bool waswalking = m_IsWalking;
 
