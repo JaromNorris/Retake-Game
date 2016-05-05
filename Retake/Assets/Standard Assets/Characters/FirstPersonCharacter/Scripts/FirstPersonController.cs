@@ -96,6 +96,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 PlayLandingSound();
                 m_MoveDir.y = 0f;
                 m_Jumping = false;
+                if (walking)
+                    anim.SetBool("walking", true);
+                else if (running)
+                    anim.SetBool("running", true);
+                else if (strafingL)
+                    anim.SetBool("isStrafingL", true);
+                else if (strafingR)
+                    anim.SetBool("isStrafingR", true);
+                else
+                    anim.SetBool("idle", true);
             }
             if (!m_CharacterController.isGrounded && !m_Jumping && m_PreviouslyGrounded)
             {
@@ -130,19 +140,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 idle = false;
                 strafingR = true;
             }
-            else if (vertical == 0 && horizontal == 0 && !idle)
-            {
-                anim.SetBool("isStrafingL", false);
-                anim.SetBool("isStrafingR", false);
-                anim.SetBool("walking", false);
-                anim.SetBool("running", false);
-                anim.SetBool("idle", true);
-                strafingL = false;
-                strafingR = false;
-                walking = false;
-                running = false;
-                idle = true;
-            }
             else if (vertical != 0 && Input.GetKey(KeyCode.LeftShift) & !running)
             {
                 anim.SetBool("isStrafingL", false);
@@ -168,6 +165,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 running = false;
                 idle = false;
                 walking = true;
+            }
+            else if (vertical == 0 && horizontal == 0 && !idle)
+            {
+                anim.SetBool("isStrafingL", false);
+                anim.SetBool("isStrafingR", false);
+                anim.SetBool("walking", false);
+                anim.SetBool("running", false);
+                anim.SetBool("idle", true);
+                strafingL = false;
+                strafingR = false;
+                walking = false;
+                running = false;
+                idle = true;
             }
             else
             {

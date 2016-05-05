@@ -20284,8 +20284,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 499278, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11490232, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
+      propertyPath: UICanvas
+      value: 
+      objectReference: {fileID: 155157384}
+    - target: {fileID: 11490232, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
+      propertyPath: waterMask
+      value: 
+      objectReference: {fileID: 1023102012}
     - target: {fileID: 11433204, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
       propertyPath: hotbarUI
       value: 
@@ -20298,42 +20306,6 @@ Prefab:
       propertyPath: selectionIndicator
       value: 
       objectReference: {fileID: 1681608279}
-    - target: {fileID: 11490232, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
-      propertyPath: UICanvas
-      value: 
-      objectReference: {fileID: 155157384}
-    - target: {fileID: 11490232, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
-      propertyPath: waterMask
-      value: 
-      objectReference: {fileID: 1023102012}
-    - target: {fileID: 427866, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 427866, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 427866, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 427866, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -.629999995
-      objectReference: {fileID: 0}
-    - target: {fileID: 427866, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 427866, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -.180000007
-      objectReference: {fileID: 0}
-    - target: {fileID: 9522216, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a55cb40145863bd4ba76e27ee3e7de97, type: 2}
   m_IsPrefabParent: 0

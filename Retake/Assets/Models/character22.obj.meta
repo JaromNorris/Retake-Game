@@ -1,0 +1,146 @@
+fileFormatVersion: 2
+guid: e4fa2ddee48d1de4c9b7e1a0ec73f61b
+timeCreated: 1462413195
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: character21:group14_character21:pasted__pCube1_character21:polySurface1
+    100002: character21:Group64322_pasted__polySurface4_character21:group10_character21:pasted__group9_character21:pasted__pasted__pCube9_character21:polySurface1
+    100004: character21:Group64322_pasted__polySurface4_character21:group11_character21:pasted__group10_character21:pasted__pasted__pCube10_character21:polySurface1
+    100006: character21:Group64322_pasted__polySurface4_character21:group12_character21:pasted__group11_character21:pasted__pasted__pCube11_character21:polySurface1
+    100008: character21:Group64322_pasted__polySurface4_character21:group13_character21:pasted__group12_character21:pasted__pasted__pCube12_character21:polySurface1
+    100010: character21:Group64322_pasted__polySurface4_character21:group3_character21:pasted__group2_character21:pasted__pasted__pCube2_character21:polySurface1
+    100012: character21:Group64322_pasted__polySurface4_character21:group4_character21:pasted__group3_character21:pasted__pasted__pCube3_character21:polySurface1
+    100014: character21:Group64322_pasted__polySurface4_character21:group5_character21:pasted__group4_character21:pasted__pasted__pCube4_character21:polySurface1
+    100016: character21:Group64322_pasted__polySurface4_character21:group6_character21:pasted__group5_character21:pasted__pasted__pCube5_character21:polySurface1
+    100018: character21:Group64322_pasted__polySurface4_character21:group7_character21:pasted__group6_character21:pasted__pasted__pCube6_character21:polySurface1
+    100020: character21:Group64322_pasted__polySurface4_character21:group8_character21:pasted__group7_character21:pasted__pasted__pCube7_character21:polySurface1
+    100022: character21:Group64322_pasted__polySurface4_character21:group9_character21:pasted__group8_character21:pasted__pasted__pCube8_character21:polySurface1
+    100024: character21:Group64322_pasted__polySurface4_character21:polySurface1
+    100026: character21:pCube1_character21:polySurface1
+    100028: character21:pPipe1_character21:polySurface1
+    100030: //RootNode
+    400000: character21:group14_character21:pasted__pCube1_character21:polySurface1
+    400002: character21:Group64322_pasted__polySurface4_character21:group10_character21:pasted__group9_character21:pasted__pasted__pCube9_character21:polySurface1
+    400004: character21:Group64322_pasted__polySurface4_character21:group11_character21:pasted__group10_character21:pasted__pasted__pCube10_character21:polySurface1
+    400006: character21:Group64322_pasted__polySurface4_character21:group12_character21:pasted__group11_character21:pasted__pasted__pCube11_character21:polySurface1
+    400008: character21:Group64322_pasted__polySurface4_character21:group13_character21:pasted__group12_character21:pasted__pasted__pCube12_character21:polySurface1
+    400010: character21:Group64322_pasted__polySurface4_character21:group3_character21:pasted__group2_character21:pasted__pasted__pCube2_character21:polySurface1
+    400012: character21:Group64322_pasted__polySurface4_character21:group4_character21:pasted__group3_character21:pasted__pasted__pCube3_character21:polySurface1
+    400014: character21:Group64322_pasted__polySurface4_character21:group5_character21:pasted__group4_character21:pasted__pasted__pCube4_character21:polySurface1
+    400016: character21:Group64322_pasted__polySurface4_character21:group6_character21:pasted__group5_character21:pasted__pasted__pCube5_character21:polySurface1
+    400018: character21:Group64322_pasted__polySurface4_character21:group7_character21:pasted__group6_character21:pasted__pasted__pCube6_character21:polySurface1
+    400020: character21:Group64322_pasted__polySurface4_character21:group8_character21:pasted__group7_character21:pasted__pasted__pCube7_character21:polySurface1
+    400022: character21:Group64322_pasted__polySurface4_character21:group9_character21:pasted__group8_character21:pasted__pasted__pCube8_character21:polySurface1
+    400024: character21:Group64322_pasted__polySurface4_character21:polySurface1
+    400026: character21:pCube1_character21:polySurface1
+    400028: character21:pPipe1_character21:polySurface1
+    400030: //RootNode
+    2300000: character21:group14_character21:pasted__pCube1_character21:polySurface1
+    2300002: character21:Group64322_pasted__polySurface4_character21:group10_character21:pasted__group9_character21:pasted__pasted__pCube9_character21:polySurface1
+    2300004: character21:Group64322_pasted__polySurface4_character21:group11_character21:pasted__group10_character21:pasted__pasted__pCube10_character21:polySurface1
+    2300006: character21:Group64322_pasted__polySurface4_character21:group12_character21:pasted__group11_character21:pasted__pasted__pCube11_character21:polySurface1
+    2300008: character21:Group64322_pasted__polySurface4_character21:group13_character21:pasted__group12_character21:pasted__pasted__pCube12_character21:polySurface1
+    2300010: character21:Group64322_pasted__polySurface4_character21:group3_character21:pasted__group2_character21:pasted__pasted__pCube2_character21:polySurface1
+    2300012: character21:Group64322_pasted__polySurface4_character21:group4_character21:pasted__group3_character21:pasted__pasted__pCube3_character21:polySurface1
+    2300014: character21:Group64322_pasted__polySurface4_character21:group5_character21:pasted__group4_character21:pasted__pasted__pCube4_character21:polySurface1
+    2300016: character21:Group64322_pasted__polySurface4_character21:group6_character21:pasted__group5_character21:pasted__pasted__pCube5_character21:polySurface1
+    2300018: character21:Group64322_pasted__polySurface4_character21:group7_character21:pasted__group6_character21:pasted__pasted__pCube6_character21:polySurface1
+    2300020: character21:Group64322_pasted__polySurface4_character21:group8_character21:pasted__group7_character21:pasted__pasted__pCube7_character21:polySurface1
+    2300022: character21:Group64322_pasted__polySurface4_character21:group9_character21:pasted__group8_character21:pasted__pasted__pCube8_character21:polySurface1
+    2300024: character21:Group64322_pasted__polySurface4_character21:polySurface1
+    2300026: character21:pCube1_character21:polySurface1
+    2300028: character21:pPipe1_character21:polySurface1
+    3300000: character21:group14_character21:pasted__pCube1_character21:polySurface1
+    3300002: character21:Group64322_pasted__polySurface4_character21:group10_character21:pasted__group9_character21:pasted__pasted__pCube9_character21:polySurface1
+    3300004: character21:Group64322_pasted__polySurface4_character21:group11_character21:pasted__group10_character21:pasted__pasted__pCube10_character21:polySurface1
+    3300006: character21:Group64322_pasted__polySurface4_character21:group12_character21:pasted__group11_character21:pasted__pasted__pCube11_character21:polySurface1
+    3300008: character21:Group64322_pasted__polySurface4_character21:group13_character21:pasted__group12_character21:pasted__pasted__pCube12_character21:polySurface1
+    3300010: character21:Group64322_pasted__polySurface4_character21:group3_character21:pasted__group2_character21:pasted__pasted__pCube2_character21:polySurface1
+    3300012: character21:Group64322_pasted__polySurface4_character21:group4_character21:pasted__group3_character21:pasted__pasted__pCube3_character21:polySurface1
+    3300014: character21:Group64322_pasted__polySurface4_character21:group5_character21:pasted__group4_character21:pasted__pasted__pCube4_character21:polySurface1
+    3300016: character21:Group64322_pasted__polySurface4_character21:group6_character21:pasted__group5_character21:pasted__pasted__pCube5_character21:polySurface1
+    3300018: character21:Group64322_pasted__polySurface4_character21:group7_character21:pasted__group6_character21:pasted__pasted__pCube6_character21:polySurface1
+    3300020: character21:Group64322_pasted__polySurface4_character21:group8_character21:pasted__group7_character21:pasted__pasted__pCube7_character21:polySurface1
+    3300022: character21:Group64322_pasted__polySurface4_character21:group9_character21:pasted__group8_character21:pasted__pasted__pCube8_character21:polySurface1
+    3300024: character21:Group64322_pasted__polySurface4_character21:polySurface1
+    3300026: character21:pCube1_character21:polySurface1
+    3300028: character21:pPipe1_character21:polySurface1
+    4300000: character21:group14_character21:pasted__pCube1_character21:polySurface1
+    4300002: character21:Group64322_pasted__polySurface4_character21:group10_character21:pasted__group9_character21:pasted__pasted__pCube9_character21:polySurface1
+    4300004: character21:Group64322_pasted__polySurface4_character21:group11_character21:pasted__group10_character21:pasted__pasted__pCube10_character21:polySurface1
+    4300006: character21:Group64322_pasted__polySurface4_character21:group12_character21:pasted__group11_character21:pasted__pasted__pCube11_character21:polySurface1
+    4300008: character21:Group64322_pasted__polySurface4_character21:group13_character21:pasted__group12_character21:pasted__pasted__pCube12_character21:polySurface1
+    4300010: character21:Group64322_pasted__polySurface4_character21:group3_character21:pasted__group2_character21:pasted__pasted__pCube2_character21:polySurface1
+    4300012: character21:Group64322_pasted__polySurface4_character21:group4_character21:pasted__group3_character21:pasted__pasted__pCube3_character21:polySurface1
+    4300014: character21:Group64322_pasted__polySurface4_character21:group5_character21:pasted__group4_character21:pasted__pasted__pCube4_character21:polySurface1
+    4300016: character21:Group64322_pasted__polySurface4_character21:group6_character21:pasted__group5_character21:pasted__pasted__pCube5_character21:polySurface1
+    4300018: character21:Group64322_pasted__polySurface4_character21:group7_character21:pasted__group6_character21:pasted__pasted__pCube6_character21:polySurface1
+    4300020: character21:Group64322_pasted__polySurface4_character21:group8_character21:pasted__group7_character21:pasted__pasted__pCube7_character21:polySurface1
+    4300022: character21:Group64322_pasted__polySurface4_character21:group9_character21:pasted__group8_character21:pasted__pasted__pCube8_character21:polySurface1
+    4300024: character21:Group64322_pasted__polySurface4_character21:polySurface1
+    4300026: character21:pCube1_character21:polySurface1
+    4300028: character21:pPipe1_character21:polySurface1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
